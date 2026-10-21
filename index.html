@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#8e3e59">
+<meta name="description" content="Thiệp hoa điện tử 20/10 — gửi lời yêu thương theo cách của bạn.">
+<title>Thiệp Hoa 20/10 | Gửi Yêu Thương</title>
+<style>
+:root{--wine:#78364f;--rose:#b96d83;--blush:#f8e8e9;--cream:#fffaf4;--gold:#c9a66b;--ink:#49343b;--muted:#806b70;--shadow:0 24px 70px #51253b20}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 10% 5%,#f9e5e8 0,transparent 35%),radial-gradient(ellipse at 95% 25%,#f2e4d3 0,transparent 32%),var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;min-height:100vh}button,input,textarea{font:inherit}button{cursor:pointer}.topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px clamp(18px,5vw,70px);border-bottom:1px solid #b78a7826;background:#fffaf4b8;backdrop-filter:blur(12px)}.brand{font-size:14px;letter-spacing:.18em;text-transform:uppercase;color:var(--wine)}.topbar small{font-family:Arial,sans-serif;color:var(--muted);letter-spacing:.04em}.layout{width:min(1200px,94%);margin:42px auto 70px;display:grid;grid-template-columns:minmax(300px,.9fr) minmax(360px,1.1fr);gap:clamp(24px,5vw,68px);align-items:start}.eyebrow{font:700 11px Arial,sans-serif;letter-spacing:.23em;text-transform:uppercase;color:var(--rose)}h1{font-size:clamp(35px,4.5vw,57px);line-height:1.05;font-weight:400;margin:14px 0 15px;color:var(--wine)}.intro{font:15px/1.8 Arial,sans-serif;color:var(--muted);max-width:480px}.editor{margin-top:27px;padding:24px;background:#fffdf9d9;border:1px solid #d8bcae66;border-radius:20px;box-shadow:var(--shadow)}.editor h2{font-size:21px;font-weight:400;margin:0 0 18px;color:var(--wine)}.field{display:flex;flex-direction:column;gap:7px;margin:14px 0}.field label{font:700 11px Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#7d5b65}.field input,.field textarea,.field select{width:100%;border:1px solid #e3cfd0;background:#fffdfa;border-radius:10px;padding:12px 13px;color:var(--ink);outline:none;font:14px/1.5 Arial,sans-serif;transition:.2s}.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--rose);box-shadow:0 0 0 3px #b96d831a}.music-hint{font:12px/1.6 Arial,sans-serif;color:var(--muted);margin:8px 0 0}.song-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}.song-link{font:700 12px Arial,sans-serif;color:var(--wine);text-decoration:underline;text-underline-offset:3px}.field textarea{min-height:105px;resize:vertical}.file-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.file-input{display:block;border:1px dashed #d8b6bd;border-radius:12px;padding:12px;background:#fff8f7;font:12px/1.5 Arial,sans-serif;color:var(--muted)}.file-input input{display:block;width:100%;font-size:11px;margin-top:7px}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}.btn{border:1px solid var(--wine);border-radius:999px;padding:11px 17px;font:700 12px Arial,sans-serif;letter-spacing:.03em;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px)}.btn.primary{background:var(--wine);color:white}.btn.secondary{background:transparent;color:var(--wine)}.btn.gold{background:#f2e5ce;border-color:#d4b67d;color:#654a30}.sharebox{display:none;margin-top:14px;padding:14px;border-radius:12px;background:#f9f0e7;border:1px solid #ead9c5;font:12px/1.6 Arial,sans-serif;overflow-wrap:anywhere}.sharebox.show{display:block}.sharebox a{color:var(--wine)}#qrcode{margin-top:12px;background:white;padding:10px;display:inline-block;border-radius:8px;min-height:20px}#qrcode img,#qrcode canvas{max-width:min(260px,100%);height:auto!important}.preview-wrap{position:sticky;top:22px}.preview-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:13px;font:700 11px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}.preview-head span:last-child{color:var(--gold)}.scene{position:relative;min-height:640px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:26px;background:linear-gradient(145deg,#f1d8dc,#fff3e7 55%,#ead2d3);box-shadow:var(--shadow);border:1px solid #fff}.glow{position:absolute;width:350px;height:350px;border-radius:50%;background:#fff9e7a6;filter:blur(35px);top:10%;left:10%;pointer-events:none}.envelope-stage{position:relative;width:min(88%,430px);height:330px;perspective:1000px;display:flex;align-items:flex-end;justify-content:center;margin-top:40px;z-index:2}.letter{position:absolute;bottom:28px;width:83%;height:270px;background:#fffdf7;border:1px solid #d7b783;box-shadow:0 10px 25px #58263a1c;display:flex;flex-direction:column;align-items:center;text-align:center;padding:28px 20px 18px;transform:translateY(80px);transition:transform 1s cubic-bezier(.2,.75,.2,1);z-index:1;overflow:hidden}.letter:before{content:'';position:absolute;inset:9px;border:1px solid #d7b78388;pointer-events:none}.letter.open{transform:translateY(-100px);z-index:4}.letter .tiny{font:700 9px Arial,sans-serif;letter-spacing:.25em;color:var(--gold);text-transform:uppercase}.letter h2{font-size:clamp(27px,3vw,36px);font-weight:400;font-style:italic;color:var(--wine);margin:12px 0 9px}.letter .to{font-size:14px;color:#946273;font-style:italic}.letter .message{font-size:13px;line-height:1.65;color:#6e555b;max-width:290px;white-space:pre-wrap;overflow:auto;z-index:1}.letter .from{font-size:12px;font-style:italic;color:var(--wine);margin-top:auto;padding-top:10px}.letter .flower-mark{font-size:27px;margin-top:8px}.envelope{position:absolute;bottom:0;width:100%;height:215px;z-index:3;filter:drop-shadow(0 14px 12px #6e30401b)}.env-back{position:absolute;inset:0;background:#c88797;border-radius:5px 5px 14px 14px}.env-left,.env-right{position:absolute;inset:0}.env-left{background:#d9a0a8;clip-path:polygon(0 0,52% 57%,0 100%)}.env-right{background:#d092a0;clip-path:polygon(100% 0,48% 57%,100% 100%)}.env-front{position:absolute;inset:0;background:#e7b7b7;clip-path:polygon(0 100%,50% 43%,100% 100%);border-radius:0 0 14px 14px}.env-flap{position:absolute;top:0;left:0;width:100%;height:60%;background:#edc7c5;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s ease;z-index:5}.seal{position:absolute;left:50%;top:54%;transform:translate(-50%,-50%);width:51px;height:51px;border-radius:50%;background:radial-gradient(circle at 35% 25%,#f7e2bd,#b98c4e);border:2px solid #f3d9a1;display:grid;place-items:center;color:#fff6df;font-size:23px;box-shadow:0 3px 9px #703b3b35;transition:opacity .3s;z-index:6}.envelope.open .env-flap{transform:rotateX(180deg);z-index:0}.envelope.open .seal{opacity:0;pointer-events:none}.open-prompt{position:absolute;bottom:20px;z-index:7;border:0;background:#fffaf0;color:var(--wine);border-radius:999px;padding:12px 22px;box-shadow:0 5px 18px #6d2c401e;font:700 12px Arial,sans-serif;letter-spacing:.06em;transition:.3s}.open-prompt:hover{background:white;transform:translateY(-2px)}.envelope.open~.open-prompt{opacity:0;pointer-events:none}.scene-caption{position:absolute;top:28px;left:15px;right:15px;text-align:center;color:#8e5364;font-size:12px;font-style:italic;letter-spacing:.04em}.decor{position:absolute;pointer-events:none;z-index:1;opacity:.8;animation:float 5s ease-in-out infinite}.d1{top:12%;left:9%;font-size:34px}.d2{top:20%;right:8%;font-size:28px;animation-delay:-2s}.d3{bottom:12%;left:9%;font-size:23px;animation-delay:-1s}.d4{bottom:18%;right:8%;font-size:32px;animation-delay:-3s}@keyframes float{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-12px) rotate(7deg)}}.particle{position:absolute;top:-30px;pointer-events:none;z-index:8;animation:fall linear forwards;opacity:.85}@keyframes fall{to{transform:translateY(720px) rotate(450deg);opacity:0}}.note{font:12px/1.6 Arial,sans-serif;color:var(--muted);margin-top:14px}.footer{text-align:center;padding:0 20px 32px;font:11px Arial,sans-serif;color:#9a7e82;letter-spacing:.04em}.toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,20px);background:#49343b;color:white;padding:12px 18px;border-radius:999px;font:13px Arial,sans-serif;opacity:0;transition:.3s;pointer-events:none;z-index:20;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.layout{grid-template-columns:1fr;width:min(640px,92%);margin-top:28px}.preview-wrap{position:static;grid-row:1}.editor{margin-top:24px}.scene{min-height:600px}.preview-head{margin-bottom:10px}.topbar{padding:15px 5%}}@media(max-width:460px){.scene{min-height:540px;border-radius:20px}.envelope-stage{width:90%;height:300px}.envelope{height:190px}.letter{height:250px;width:86%;padding:23px 15px 15px}.letter.open{transform:translateY(-90px)}.file-row{grid-template-columns:1fr}.editor{padding:19px}.brand{font-size:11px}.topbar small{font-size:10px}.d1{left:5%}.d2{right:5%}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* === Giao diện vũ trụ lãng mạn theo mẫu tham khảo === */
+:root{--wine:#ff7bb7;--rose:#f4a0d0;--blush:#29143f;--cream:#0b0618;--gold:#ffd69b;--ink:#fff0fa;--muted:#c5b1d8;--shadow:0 22px 65px #0008}
+html,body{min-height:100%;background:#080411;color:#fff0fa}
+body{font-family:Georgia,'Times New Roman',serif;background:radial-gradient(ellipse at 50% 30%,#27103f 0,transparent 48%),radial-gradient(ellipse at 80% 80%,#1c0b32 0,transparent 40%),#080411;isolation:isolate}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background-image:radial-gradient(1px 1px at 8% 17%,#fff 70%,transparent),radial-gradient(1px 1px at 25% 71%,#f9d7ff 70%,transparent),radial-gradient(2px 2px at 71% 14%,#ffe4f5 70%,transparent),radial-gradient(1px 1px at 88% 61%,#fff 70%,transparent),radial-gradient(1px 1px at 52% 46%,#d7b5ff 70%,transparent),radial-gradient(2px 2px at 35% 28%,#fff 70%,transparent),radial-gradient(1px 1px at 93% 32%,#fff 70%,transparent),radial-gradient(1px 1px at 17% 87%,#f6c8ff 70%,transparent);background-size:420px 420px;animation:starDrift 36s linear infinite;opacity:.75}
+@keyframes starDrift{from{background-position:0 0}to{background-position:200px 420px}}
+.topbar{position:relative;background:#0c0719cc;border-bottom:1px solid #ed9bed26;color:#fbeaff;backdrop-filter:blur(18px)}.brand{color:#ff9ed2}.topbar small{color:#c7afd8}
+.layout{margin-top:30px}.eyebrow{color:#f3a0dc}h1{color:#fff0fb;text-shadow:0 0 32px #d650ff36}.intro{color:#cbb7df}
+.editor{background:linear-gradient(145deg,#170d29eF,#10091feF);border:1px solid #d88dff38;border-radius:22px;box-shadow:0 20px 70px #0007,inset 0 1px #ffffff0c;color:#f9eaff}.editor h2{color:#ffe1f5}.field label{color:#d7b4ed}.field input,.field textarea,.field select{background:#0b0617;border-color:#503461;color:#fff0fa}.field input:focus,.field textarea:focus,.field select:focus{border-color:#fa8bc7;box-shadow:0 0 0 3px #fa8bc722}.music-hint,.note{color:#bba5d1}.file-input{background:#160b27;border-color:#a06db7;color:#d7c4e6}.btn{border-color:#d87aba}.btn.primary{background:linear-gradient(115deg,#c83d99,#9f46d8);border-color:#e28bc9;color:#fff;box-shadow:0 8px 24px #b6319530}.btn.secondary{background:#ffffff08;color:#ffe4f7;border-color:#82529c}.btn.gold{background:#f8cce8;border-color:#f6a9d1;color:#542044}.sharebox{background:#140a24;border-color:#754b8e;color:#fceafa}.sharebox a,.song-link{color:#ffb2df}#qrcode{background:white}
+.preview-head{color:#c7b1db}.preview-head span:last-child{color:#ffb2df}.scene{min-height:680px;border:1px solid #b88aff38;border-radius:28px;background:radial-gradient(ellipse at 50% 52%,#31124f 0,#1a0c2d 42%,#090512 80%);box-shadow:0 18px 80px #0008,0 0 50px #9c35d81a;isolation:isolate}
+.starfield{position:absolute;inset:0;z-index:0;pointer-events:none;background-image:radial-gradient(2px 2px at 20% 20%,#fff 60%,transparent),radial-gradient(1px 1px at 70% 16%,#f9d4ff 60%,transparent),radial-gradient(1px 1px at 42% 68%,#fff 60%,transparent),radial-gradient(2px 2px at 83% 77%,#f6afff 60%,transparent),radial-gradient(1px 1px at 35% 42%,#fff 60%,transparent),radial-gradient(1px 1px at 63% 54%,#fbe5ff 60%,transparent);background-size:260px 230px;opacity:.65;animation:starDrift 42s linear infinite}
+.nebula{position:absolute;width:55%;height:40%;filter:blur(60px);border-radius:50%;pointer-events:none;opacity:.32}.nebula-one{left:-10%;top:24%;background:#8b26b9}.nebula-two{right:-10%;bottom:3%;background:#503cbd}
+.glow{width:310px;height:310px;top:30%;left:calc(50% - 155px);background:#a740df35;filter:blur(55px)}
+.scene-caption{top:25px;color:#e9c6ff;z-index:3;font-family:Arial,sans-serif;display:flex;flex-direction:column;gap:7px}.caption-kicker{font-size:9px;letter-spacing:.32em;color:#c6a3ef}.scene-caption strong{font-weight:400;font-size:clamp(17px,2vw,23px);font-style:italic;color:#fff1ff;text-shadow:0 0 22px #e8a8ff76}
+.flower-bouquet{position:absolute;top:78px;left:50%;transform:translateX(-50%);z-index:2;width:200px;height:125px;filter:drop-shadow(0 0 17px #fa8bdc55);pointer-events:none}.flower-bouquet span{position:absolute;font-size:36px;animation:bloom 4s ease-in-out infinite;filter:drop-shadow(0 0 8px #ff9dd655)}.flower-bouquet span:nth-child(1){left:8px;top:31px;transform:rotate(-25deg);font-size:34px}.flower-bouquet span:nth-child(2){left:50px;top:4px;font-size:39px;animation-delay:-1s}.flower-bouquet span:nth-child(3){left:86px;top:29px;font-size:44px;animation-delay:-2s}.flower-bouquet span:nth-child(4){left:125px;top:3px;font-size:39px;animation-delay:-.8s}.flower-bouquet span:nth-child(5){left:150px;top:38px;font-size:32px;animation-delay:-1.8s}.flower-bouquet span:nth-child(6){left:71px;top:57px;font-size:30px;animation-delay:-2.6s}.flower-bouquet i{position:absolute;right:14px;top:-5px;color:#fce5ff;font-size:16px;font-style:normal;animation:twinkle 2s ease-in-out infinite}
+@keyframes bloom{0%,100%{filter:brightness(.94) drop-shadow(0 0 3px #e76bc2);transform:translateY(0) scale(.96) rotate(-5deg)}50%{filter:brightness(1.16) drop-shadow(0 0 14px #ff9edb);transform:translateY(-5px) scale(1.08) rotate(5deg)}}@keyframes twinkle{0%,100%{opacity:.35;transform:scale(.8)}50%{opacity:1;transform:scale(1.4)}}
+.orbit-notes{position:absolute;inset:0;z-index:1;pointer-events:none;perspective:800px}.orbit-note{position:absolute;width:118px;min-height:64px;padding:11px 10px;display:flex;align-items:center;justify-content:center;text-align:center;font:italic 11px/1.45 Georgia,serif;color:#f9e7ff;border:1px solid #e8b1ff37;border-radius:13px;background:linear-gradient(145deg,#29123edb,#130920c9);box-shadow:0 0 19px #ac47dc20,inset 0 0 15px #fff1;backdrop-filter:blur(6px);text-shadow:0 0 9px #e5a6ff39;animation:floatNote 7s ease-in-out infinite}.note-a{left:5%;top:31%;transform:rotate(-12deg);animation-delay:-2s}.note-b{right:5%;top:27%;transform:rotate(10deg);animation-delay:-4s}.note-c{left:13%;top:56%;transform:rotate(8deg);animation-delay:-1s}.note-d{right:12%;top:57%;transform:rotate(-9deg);animation-delay:-3s}.note-e{left:31%;top:38%;transform:rotate(-4deg);animation-delay:-5s}.note-f{right:30%;top:62%;transform:rotate(5deg);animation-delay:-2.5s}
+@keyframes floatNote{0%,100%{translate:0 0;filter:brightness(.9)}50%{translate:0 -13px;filter:brightness(1.25)}}
+.envelope-stage{height:365px;margin-top:145px;z-index:3}.letter{background:linear-gradient(160deg,#fffdf8,#fff6e9);border:1px solid #f3d5a6;box-shadow:0 0 32px #f1b2ff28,0 12px 35px #0008;color:#523a4e}.letter:before{border-color:#d9b77c88}.letter h2{color:#a33b7b;text-shadow:0 1px white}.letter .tiny{color:#b48a49}.letter .to{color:#9a557d}.letter .message{color:#654958}.letter .from{color:#9a3d76}.envelope{height:218px;filter:drop-shadow(0 0 25px #e73ca75c) drop-shadow(0 16px 15px #0008)}.env-back{background:linear-gradient(135deg,#7a1a61,#cf458c 52%,#67205f)}.env-left{background:linear-gradient(120deg,#ed72b1,#9e2c80)}.env-right{background:linear-gradient(240deg,#f38bc0,#8e2a78)}.env-front{background:linear-gradient(140deg,#f9a8cc,#d74694 55%,#8d256e)}.env-flap{background:linear-gradient(160deg,#ffd0e5,#dc579f);filter:drop-shadow(0 0 10px #f7a5d4)}.seal{background:radial-gradient(circle at 35% 25%,#ffecfb,#e65aab 52%,#962d80);border:2px solid #ffd8f0;box-shadow:0 0 22px #f77fcc80;color:#fff}
+.open-prompt{bottom:11px;z-index:7;color:white;background:linear-gradient(110deg,#dc4eab,#9348d8);border:1px solid #f9b1e9;box-shadow:0 0 25px #d94eb078,0 7px 22px #0007;font-size:11px;letter-spacing:.03em}.open-prompt:hover{background:linear-gradient(110deg,#ee73bd,#ab5ce6)}.envelope.open~.open-prompt{opacity:0;pointer-events:none}
+.decor{color:#f7b5ff;text-shadow:0 0 16px #e5a5ff;opacity:.9}.d1{top:42%;left:8%;font-size:24px}.d2{top:15%;right:11%;font-size:25px}.d3{bottom:15%;left:16%;font-size:19px}.d4{bottom:15%;right:12%;font-size:22px}.particle{filter:drop-shadow(0 0 5px #e797ff)}
+.footer{color:#9d83b8}.toast{background:#271138;border:1px solid #bd6fce;color:#fff0ff;box-shadow:0 8px 35px #0008}
+/* Danh sách nhạc dạng thẻ, dễ chọn hơn menu thả xuống */
+.visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+.song-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.song-option{min-width:0;display:flex;gap:8px;align-items:flex-start;text-align:left;padding:10px 9px;border:1px solid #563365;background:linear-gradient(145deg,#1b102a,#11091e);border-radius:12px;color:#f4e2ff;transition:.2s}.song-option:hover{border-color:#d975bd;transform:translateY(-1px);background:#291239}.song-option.selected{border-color:#ff9cd9;background:linear-gradient(145deg,#431741,#27102e);box-shadow:inset 0 0 0 1px #ff95d32b,0 0 16px #df55b51c}.song-number{flex:0 0 25px;width:25px;height:25px;border-radius:8px;display:grid;place-items:center;background:#362045;color:#ffb1df;font:700 10px Arial,sans-serif}.song-option.selected .song-number{background:#e75bac;color:white}.song-info{min-width:0;display:block}.song-title{display:block;font:700 11px/1.35 Arial,sans-serif;color:#fff2fa}.song-description{display:block;margin-top:5px;font:10px/1.4 Arial,sans-serif;color:#bca4ce}.song-check{display:block;color:#ff9ed6;font:12px Arial,sans-serif;min-height:14px;margin-top:3px}.song-actions .btn{font-size:11px}.music-picker .field label{margin-bottom:0}
+/* Link gedeeld sẽ mở thẳng trải nghiệm nhận thiệp, không hiện bảng biên tập */
+body.recipient-mode .topbar,body.recipient-mode .editor-column,body.recipient-mode .preview-head,body.recipient-mode .footer,body.recipient-mode .preview-note{display:none!important}
+body.recipient-mode .layout{display:block;width:100%;max-width:none;margin:0;padding:0}
+body.recipient-mode .preview-wrap{position:relative;top:auto;width:100%;margin:0}
+body.recipient-mode .scene{height:100svh;min-height:650px;width:100%;border-radius:0;border:0;box-shadow:none}
+body.recipient-mode .envelope-stage{width:min(450px,72vw);height:360px;margin-top:100px}
+body.recipient-mode .letter{width:83%;height:285px}
+body.recipient-mode .letter.open{transform:translateY(-105px)}
+body.recipient-mode .flower-bouquet{top:7%;transform:translateX(-50%) scale(1.14)}
+body.recipient-mode .orbit-note{width:clamp(92px,12vw,145px);font-size:clamp(10px,.9vw,13px)}
+@media(max-width:850px){.layout{grid-template-columns:1fr}.preview-wrap{grid-row:1}.editor{background:#140b23ee}.scene{min-height:700px}.song-list{grid-template-columns:1fr 1fr}.orbit-note{width:100px;font-size:10px}.note-e,.note-f{display:none}}
+@media(max-width:520px){.topbar{padding:14px 5%}.layout{width:94%;margin-top:22px}.scene{min-height:670px;border-radius:21px}.scene-caption{top:18px}.scene-caption strong{font-size:17px}.flower-bouquet{top:74px;transform:translateX(-50%) scale(.8)}.envelope-stage{width:91%;height:315px;margin-top:150px}.envelope{height:190px}.letter{height:250px;width:86%;padding:23px 15px 15px}.letter.open{transform:translateY(-88px)}.orbit-note{width:88px;min-height:55px;padding:7px 6px;font-size:9px}.note-a{left:2%;top:32%}.note-b{right:2%;top:30%}.note-c{left:3%;top:59%}.note-d{right:3%;top:59%}.note-e,.note-f{display:none}.d1{left:8%;top:47%}.d2{right:7%;top:17%}.d3{bottom:12%;left:16%}.d4{bottom:12%;right:13%}.song-list{grid-template-columns:1fr}.song-option{padding:10px}.song-title{font-size:12px}.song-description{font-size:11px}body.recipient-mode .scene{min-height:100svh}.recipient-mode .flower-bouquet{top:6%;transform:translateX(-50%) scale(.8)}body.recipient-mode .envelope-stage{width:92vw;height:315px;margin-top:150px}body.recipient-mode .letter.open{transform:translateY(-88px)}body.recipient-mode .note-a{left:2%;top:28%}body.recipient-mode .note-b{right:2%;top:26%}body.recipient-mode .note-c{left:2%;top:65%}body.recipient-mode .note-d{right:2%;top:65%}}
+@media(prefers-reduced-motion:reduce){body:before,.starfield,.flower-bouquet span,.orbit-note{animation:none!important}}
+
+
+/* === Luồng mở thiệp: ảnh đầu tiên -> nhạc -> hoa hồng nở -> lời chúc === */
+.intro-screen{position:absolute;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;padding:22px;background:radial-gradient(ellipse at 50% 45%,#321142 0%,#13091f 60%,#07040f 100%);opacity:1;visibility:visible;transition:opacity .75s ease,visibility .75s ease,transform .75s ease}
+.intro-screen.is-leaving{opacity:0;visibility:hidden;pointer-events:none;transform:scale(1.035)}
+.intro-image-button{width:min(90%,820px);max-height:94%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:15px;padding:0;border:0;background:transparent;color:#ffe8f7;cursor:pointer;animation:introFloat 4.8s ease-in-out infinite}
+.intro-image-button:focus-visible{outline:2px solid #ffadd9;outline-offset:8px;border-radius:18px}
+.intro-cover{display:block;width:100%;max-height:62svh;object-fit:contain;aspect-ratio:900/516;border:1px solid #ffc5ef55;border-radius:18px;box-shadow:0 0 42px #ee6bc94a,0 22px 60px #0008;user-select:none;-webkit-user-drag:none}
+.intro-instruction{display:flex;align-items:center;gap:11px;font:italic clamp(18px,2.5vw,27px)/1.35 Georgia,'Times New Roman',serif;text-align:center;color:#ffe1f2;text-shadow:0 0 15px #ff72cb90;letter-spacing:.015em}
+.intro-instruction .tap-heart{font:24px Arial,sans-serif;color:#ff91ce;animation:heartPulse 1.25s ease-in-out infinite}
+.intro-subtitle{font:10px/1.4 Arial,sans-serif;letter-spacing:.28em;color:#c5a0d9;text-transform:uppercase}
+@keyframes introFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes heartPulse{0%,100%{transform:scale(1);opacity:.8}50%{transform:scale(1.22);opacity:1}}
+.flower-bouquet{opacity:0;transform:translateX(-50%) scale(.12);transition:opacity .35s ease}
+.scene.revealed .flower-bouquet{opacity:1;animation:bouquetBloom 1.6s cubic-bezier(.16,.78,.22,1) both}
+.scene.revealed .flower-bouquet span{animation-duration:2.7s;filter:drop-shadow(0 0 13px #ff91d6)}
+@keyframes bouquetBloom{0%{transform:translateX(-50%) scale(.08) rotate(-16deg);filter:blur(7px) drop-shadow(0 0 0 #ff7bb7)}65%{transform:translateX(-50%) scale(1.16) rotate(4deg);filter:blur(0) drop-shadow(0 0 26px #ff8edc)}100%{transform:translateX(-50%) scale(1) rotate(0);filter:blur(0) drop-shadow(0 0 17px #fa8bdc70)}}
+.scene.revealed .orbit-note{animation-duration:9s;opacity:.58}
+.scene.revealed .scene-caption strong{font-size:clamp(16px,1.9vw,21px)}
+.letter h2{font-size:clamp(18px,2.15vw,23px);line-height:1.25;font-weight:500;margin:9px 0 7px;letter-spacing:.01em}
+.letter .message{flex:1;min-height:0;margin:7px 0;overflow:auto}
+.letter .from{margin-top:4px;padding-top:4px}
+.english-signoff{position:relative;z-index:1;flex:0 0 auto;margin-top:7px;font:700 9px/1.4 Arial,sans-serif;letter-spacing:.2em;color:#b14e8a;text-transform:uppercase}
+.music-embed{position:absolute;left:-4px;bottom:-4px;width:2px;height:2px;overflow:hidden;opacity:.01;pointer-events:none;z-index:0}
+.music-embed iframe{width:2px;height:2px;border:0}
+.music-status{cursor:pointer;position:absolute;z-index:12;left:50%;bottom:14px;transform:translateX(-50%);max-width:88%;padding:7px 12px;border:1px solid #ffb1dd44;border-radius:999px;background:#130820b8;backdrop-filter:blur(8px);font:10px/1.35 Arial,sans-serif;letter-spacing:.04em;color:#ffdaef;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;opacity:0;transition:opacity .5s;pointer-events:auto}
+.scene.revealed .music-status{opacity:1}
+.scene.revealed .envelope{filter:drop-shadow(0 0 30px #e73ca77a) drop-shadow(0 16px 15px #0008)}
+/* Bảo đảm ảnh mở đầu gọn cả ở bản xem trước và điện thoại. */
+@media(max-width:520px){.intro-screen{padding:16px}.intro-image-button{width:100%;gap:13px}.intro-cover{max-height:46svh;border-radius:14px}.intro-instruction{font-size:20px}.intro-subtitle{font-size:9px;letter-spacing:.2em}.letter h2{font-size:19px}.english-signoff{font-size:8px;letter-spacing:.16em}.music-status{bottom:10px;font-size:9px;max-width:94%}}
+@media(prefers-reduced-motion:reduce){.intro-image-button,.intro-instruction .tap-heart,.scene.revealed .flower-bouquet{animation:none!important}.intro-screen{transition:none}}
+
+
+/* Mobile-first recipient experience: four story stages */
+.story-screen[hidden]{display:none!important}.story-screen{position:absolute;inset:0;z-index:25;min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;padding:24px 20px;text-align:center;background:radial-gradient(ellipse at 50% 42%,#351044 0%,#160a25 48%,#080411 100%);color:#fff0fa}
+body.recipient-mode .scene{height:100svh;min-height:100svh;border-radius:0;width:100%;position:fixed;inset:0}.scene{isolation:isolate}
+body.recipient-mode .intro-screen{position:absolute}.intro-cover{object-fit:contain;aspect-ratio:auto;width:auto;max-width:100%;height:auto;max-height:64svh;background:#160a20;border-radius:20px}
+body.recipient-mode .intro-image-button{width:min(92%,520px)}body.recipient-mode .intro-instruction{font-size:clamp(19px,5vw,25px)}
+.rose-screen{gap:13px}.rose-glow{position:absolute;width:250px;height:250px;border-radius:50%;background:#ff4ba833;filter:blur(45px);top:17%;left:50%;transform:translateX(-50%)}.rose-stem{position:absolute;width:5px;height:28%;background:linear-gradient(#43845a,#17442d);border-radius:9px;top:37%;left:50%;transform-origin:top;animation:stemGrow 1.3s ease both}.bloom-rose{position:relative;width:180px;height:180px;margin:0 auto 4px;animation:roseArrive .9s ease both;filter:drop-shadow(0 0 20px #ff63b8a0)}.petal{position:absolute;left:50%;top:50%;width:65px;height:95px;border-radius:70% 70% 45% 45%;transform-origin:50% 90%;background:radial-gradient(ellipse at 35% 28%,#ffb2d7,#ed438c 55%,#8c174d);border:1px solid #ffb9db70}.p1{transform:translate(-50%,-88%) rotate(0deg)}.p2{transform:translate(-50%,-88%) rotate(45deg)}.p3{transform:translate(-50%,-88%) rotate(90deg)}.p4{transform:translate(-50%,-88%) rotate(135deg)}.p5{transform:translate(-50%,-88%) rotate(180deg)}.p6{transform:translate(-50%,-88%) rotate(225deg)}.p7{transform:translate(-50%,-88%) rotate(270deg)}.p8{transform:translate(-50%,-88%) rotate(315deg)}.rose-heart{position:absolute;left:50%;top:50%;width:48px;height:48px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffb5d9,#ad174f);box-shadow:inset 0 0 10px #72133e}.rose-kicker,.final-small{font:10px/1.5 Arial,sans-serif;letter-spacing:.24em;color:#e9a6d2}.rose-screen h2{font-size:clamp(23px,6vw,30px);font-weight:400;margin:0;color:#ffe5f4;text-shadow:0 0 18px #ff6eb6}.rose-subtitle{font:13px/1.6 Arial,sans-serif;color:#d8c1e6;margin:0 0 10px}.story-button{border:1px solid #ffaddb80;border-radius:999px;background:linear-gradient(135deg,#e84e9c,#9d3baf);color:white;padding:13px 23px;font:600 13px Arial,sans-serif;letter-spacing:.03em;box-shadow:0 7px 28px #d53b9738;cursor:pointer;transition:transform .2s,filter .2s}.story-button:active{transform:scale(.97)}.story-button span{margin-left:6px}.letter-screen{gap:16px;background:radial-gradient(ellipse at 50% 20%,#3c1a46,#11091d 72%)}.letter-card{width:min(100%,430px);max-height:67svh;overflow:auto;padding:28px 23px 22px;background:linear-gradient(145deg,#fffaf0,#f8e8d9);color:#6f354d;border:1px solid #f5d5b6;border-radius:5px;box-shadow:0 18px 55px #0007;position:relative}.letter-card:before{content:"";position:absolute;inset:9px;border:1px solid #d9b783;pointer-events:none}.letter-ornament{color:#b66a8b;font-size:19px;letter-spacing:.12em}.letter-kicker{font:9px Arial,sans-serif;letter-spacing:.18em;color:#a16c7f;margin:16px 0 8px}.letter-card h2{font-size:clamp(21px,5.5vw,27px);font-weight:400;margin:0 0 18px;color:#8c3f60}.letter-body{font:14px/1.9 Georgia,serif;white-space:pre-wrap;margin:0;color:#674a53;text-align:center}.letter-from{font:italic 13px/1.8 Georgia,serif;margin:18px 0 0;color:#8c3f60}.bottom-ornament{margin-top:13px}.letter-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.secondary-story{background:#1c1029;border-color:#d990c6;color:#ffe4f4}.voice-button{border:0;background:transparent;color:#e7c9e7;text-decoration:underline;text-underline-offset:4px;font:12px Arial,sans-serif;padding:9px}.final-screen{background:radial-gradient(ellipse at 50% 45%,#51113e,#1b0a2c 52%,#07040f);gap:18px}.final-flowers{font-size:clamp(27px,8vw,45px);animation:finalBloom 1.2s cubic-bezier(.2,.8,.2,1) both;filter:drop-shadow(0 0 15px #ff6dbb)}.final-sparkles{font-size:22px;color:#ffd7f0;letter-spacing:.12em;animation:sparklePulse 1.6s ease-in-out infinite}.final-screen h2{font:500 clamp(27px,8vw,43px)/1.2 Georgia,serif;letter-spacing:.08em;color:#ffe4f5;text-shadow:0 0 14px #ff69ba,0 0 36px #d72a92;margin:0;animation:finalBloom 1.1s ease both}.final-vietnamese{font:13px/1.8 Arial,sans-serif;color:#e0c7e9;max-width:310px;margin:0 auto 10px}.music-status{bottom:12px;z-index:40}.music-embed{z-index:40}
+@keyframes stemGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}@keyframes roseArrive{0%{transform:scale(.1) rotate(-35deg);opacity:0}75%{transform:scale(1.12) rotate(5deg);opacity:1}100%{transform:scale(1) rotate(0)}}@keyframes finalBloom{0%{transform:scale(.15);opacity:0;filter:blur(8px)}70%{transform:scale(1.12);opacity:1;filter:blur(0)}100%{transform:scale(1)}}@keyframes sparklePulse{0%,100%{opacity:.5;transform:scale(.95)}50%{opacity:1;transform:scale(1.08)}}
+@media(max-width:520px){.story-screen{padding:20px 16px}.bloom-rose{width:155px;height:155px;transform:scale(.9)}.petal{width:56px;height:83px}.letter-card{padding:24px 18px 18px;max-height:64svh}.letter-body{font-size:13px}.story-button{padding:12px 18px}.rose-stem{height:23%;top:37%}}
+
+</style>
+</head>
+<body>
+<header class="topbar"><div class="brand">✿ Fleur · Thiệp điện tử</div><small>20 THÁNG 10 · GỬI YÊU THƯƠNG</small></header>
+<main class="layout">
+<section class="editor-column">
+<div class="eyebrow">A little note, a lot of love</div>
+<h1>Một đóa hoa,<br>ngàn lời thương.</h1>
+<p class="intro">Tự tay tạo một tấm thiệp thật riêng, gửi đến người phụ nữ đặc biệt của bạn nhân ngày 20/10.</p>
+<div class="editor">
+<h2>Thiết kế thiệp của bạn</h2>
+<div class="field"><label for="recipientInput">Tên người nhận</label><input id="recipientInput" maxlength="70" value="Người phụ nữ tuyệt vời" placeholder="Ví dụ: Mẹ yêu, chị Lan..."></div>
+<div class="field"><label for="senderInput">Tên người gửi</label><input id="senderInput" maxlength="70" value="Người thương của bạn" placeholder="Tên của bạn"></div>
+<div class="field"><label for="messageInput">Lời chúc 20/10</label><textarea id="messageInput" maxlength="600">Chúc bạn luôn rạng rỡ như những đóa hoa, dịu dàng với thế giới và yêu thương chính mình thật nhiều. Mong mỗi ngày của bạn đều ngập tràn bình yên, hạnh phúc và những điều ngọt ngào nhất. 🌷</textarea></div>
+<div class="field music-picker"><label for="songSelect">♫ Gợi ý nhạc tình yêu & lời nhắn</label><select id="songSelect" class="visually-hidden" aria-hidden="true" tabindex="-1">
+<option value="hon-ca-yeu">Hơn Cả Yêu — Đức Phúc</option>
+<option value="ngay-dau-tien">Ngày Đầu Tiên — Đức Phúc</option>
+<option value="co-em-cho">Có Em Chờ — MIN ft. Mr A</option>
+<option value="noi-nay-co-anh">Nơi Này Có Anh — Sơn Tùng M-TP</option>
+<option value="anh-nang-cua-anh">Ánh Nắng Của Anh — Đức Phúc</option>
+<option value="minh-yeu-nhau-di">Mình Yêu Nhau Đi — Bích Phương</option>
+<option value="mot-nha">Một Nhà — Da LAB</option>
+<option value="nam-lay-tay-anh">Nắm Lấy Tay Anh — Tuấn Hưng</option>
+<option value="yeu-em-rat-nhieu">Yêu Em Rất Nhiều — Hoàng Tôn</option>
+<option value="cam-on-tinh-yeu">Cảm Ơn Tình Yêu — Uyên Linh</option>
+</select><div class="song-list" id="songList" aria-label="Danh sách 10 bài nhạc gợi ý"></div><p class="music-hint" id="songDescription">Giai điệu ngọt ngào dành cho một lời yêu thương chân thành.</p><div class="song-actions"><button class="btn secondary" id="listenSongBtn" type="button">↗ Nghe bài gợi ý trên YouTube</button></div></div>
+<div class="file-row"><div class="file-input">🌸 Ảnh mở đầu / trang trí<input type="file" id="photoInput" accept="image/*"></div><div class="file-input">♫ Nhạc nền riêng (tùy chọn)<input type="file" id="musicInput" accept="audio/*"><p class="music-hint">Nếu chọn tệp nhạc riêng, tệp này sẽ được ưu tiên phát khi bấm ảnh mở đầu.</p></div></div>
+<div class="actions"><button class="btn primary" id="updateBtn">Cập nhật thiệp</button><button class="btn secondary" id="openBtn">Mở / đóng thiệp</button><button class="btn gold" id="musicBtn">♫ Phát / tạm dừng nhạc</button></div>
+<div class="actions"><button class="btn secondary" id="shareBtn">↗ Tạo link chia sẻ</button><button class="btn secondary" id="qrBtn">▦ Tạo mã QR</button></div>
+<div class="sharebox" id="shareBox"><strong>Link thiệp của bạn</strong><p id="shareUrl"></p><div class="actions"><button class="btn primary" id="copyBtn">Sao chép link</button><button class="btn secondary" id="nativeShareBtn">Chia sẻ</button></div><div id="qrcode" aria-label="Mã QR chia sẻ"></div><div class="actions" id="qrDownloadActions" hidden><button class="btn primary" id="downloadQrBtn" type="button">↓ Tải ảnh QR xuống (PNG)</button></div><div class="field" id="publicUrlField" hidden><label for="publicBaseUrl">Địa chỉ website đã đăng tải</label><input id="publicBaseUrl" type="url" inputmode="url" placeholder="https://tenban.github.io/thiep-hoa-20-10/"><p class="note">Bạn đang mở file trực tiếp trên máy tính. Hãy đăng tải website lên hosting công khai trước, rồi dán địa chỉ HTTPS vào đây. Đường dẫn file:/// chỉ mở được trên máy bạn nên QR kiểu đó sẽ không dùng được trên điện thoại khác.</p></div><p class="note">Mã QR sẽ mở đúng tên người nhận, tên người gửi, lời chúc và bài nhạc gợi ý đã chọn. Ảnh hoặc tệp nhạc riêng chọn từ máy tính không tự đi kèm link; muốn chia sẻ các tệp đó cần tải chúng lên hosting công khai.</p></div>
+<p class="note">Mẹo: sau khi chỉnh sửa, bấm “Cập nhật thiệp”. Bạn có thể mở phong bì để xem lời chúc bên trong.</p>
+</div>
+</section>
+<section class="preview-wrap" aria-label="Xem trước thiệp">
+<div class="preview-head"><span>✧ Bản xem trước</span><span>Made with love</span></div>
+<div class="scene" id="scene">
+<div class="intro-screen" id="introScreen">
+  <button class="intro-image-button" id="introImageButton" type="button" aria-label="Nhấp vào ảnh có bất ngờ">
+    <img class="intro-cover" id="coverImage" src="cat-intro.png" alt="Chú mèo đội mũ đáng yêu — nhấp vào ảnh có bất ngờ" draggable="false">
+    <span class="intro-instruction">Nhấp vào ảnh có bất ngờ <span class="tap-heart" aria-hidden="true">♡</span></span>
+    <span class="intro-subtitle">Một món quà nhỏ dành riêng cho bạn</span>
+  </button>
+</div>
+<section class="story-screen rose-screen" id="roseScreen" aria-label="Hoa hồng nở" hidden>
+  <div class="rose-glow"></div><div class="rose-stem"></div>
+  <div class="bloom-rose" aria-hidden="true"><span class="petal p1"></span><span class="petal p2"></span><span class="petal p3"></span><span class="petal p4"></span><span class="petal p5"></span><span class="petal p6"></span><span class="petal p7"></span><span class="petal p8"></span><span class="rose-heart"></span></div>
+  <p class="rose-kicker">MỘT ĐÓA HOA DÀNH RIÊNG CHO BẠN</p><h2>Chúc mừng ngày 20/10</h2><p class="rose-subtitle">Mong những điều dịu dàng luôn tìm đến bạn.</p>
+  <button class="story-button" id="toLetterBtn" type="button">Mở thư yêu thương <span>♡</span></button>
+</section>
+<section class="story-screen letter-screen" id="letterScreen" aria-label="Lá thư chúc mừng" hidden>
+  <div class="letter-card"><div class="letter-ornament">✿　✧　✿</div><p class="letter-kicker">GỬI <span id="storyRecipient">NGƯỜI THƯƠNG</span></p><h2>Chúc mừng ngày 20/10</h2><p class="letter-body" id="storyMessage"></p><p class="letter-from">Thương mến,<br><span id="storySender"></span></p><div class="letter-ornament bottom-ornament">♡</div></div>
+  <div class="letter-actions"><button class="story-button secondary-story" id="readAgainBtn" type="button">↺ Đọc lại thư</button><button class="story-button" id="nextFinalBtn" type="button">Tiếp theo →</button></div>
+  <button class="voice-button" id="voiceBtn" type="button">🔊 Đọc thư thành tiếng (tùy chọn)</button>
+</section>
+<section class="story-screen final-screen" id="finalScreen" aria-label="Lời chúc cuối" hidden>
+  <div class="final-flowers" aria-hidden="true">🌹 ✿ 🌸 ✿ 🌹</div><div class="final-sparkles" aria-hidden="true">✦　✧　♡　✧　✦</div><p class="final-small">GỬI NGÀN YÊU THƯƠNG</p><h2>HAPPY WOMEN DAY</h2><p class="final-vietnamese">Chúc bạn luôn xinh đẹp, hạnh phúc và rực rỡ theo cách riêng của mình.</p><button class="story-button secondary-story" id="restartStoryBtn" type="button">↺ Xem lại từ đầu</button>
+</section>
+<div class="music-embed" id="musicEmbed" aria-hidden="true"></div>
+<div class="music-status" id="musicStatus" aria-live="polite" role="button" tabindex="0" title="Nếu không nghe được nhạc nền, nhấn để mở bài trên YouTube">♫ Giai điệu yêu thương</div>
+<div class="starfield" aria-hidden="true"></div><div class="nebula nebula-one" aria-hidden="true"></div><div class="nebula nebula-two" aria-hidden="true"></div><div class="glow"></div>
+<div class="scene-caption"><span class="caption-kicker">A LITTLE GIFT FOR YOU</span><strong>Một bức thư, ngàn yêu thương</strong></div>
+<div class="flower-bouquet" aria-hidden="true"><span>🌹</span><span>🌹</span><span>🌹</span><span>🌹</span><span>🌹</span><span>🌹</span><i>✦</i></div>
+<div class="orbit-notes" aria-hidden="true"><div class="orbit-note note-a">Chị nhớ chăm sóc bản thân nhé 💗</div><div class="orbit-note note-b">Mong bạn luôn rạng rỡ như hoa 🌸</div><div class="orbit-note note-c">Cảm ơn vì đã luôn dịu dàng ✨</div><div class="orbit-note note-d">Chúc bạn một ngày thật đặc biệt ♡</div><div class="orbit-note note-e">Bạn xứng đáng với mọi điều tốt đẹp</div><div class="orbit-note note-f">Gửi ngàn yêu thương đến bạn 💌</div></div>
+<span class="decor d1">✧</span><span class="decor d2">♡</span><span class="decor d3">✦</span><span class="decor d4">✧</span>
+<div class="envelope-stage">
+<div class="letter" id="letter"><div class="tiny">GỬI TẶNG NGƯỜI PHỤ NỮ ĐẶC BIỆT</div><h2>Chúc mừng ngày 20/10</h2><div class="to">Thân gửi <span id="recipientText">Người phụ nữ tuyệt vời</span></div><div class="flower-mark">🌹</div><p class="message" id="messageText">Chúc bạn luôn rạng rỡ như những đóa hoa...</p><div class="from">Thương mến, <span id="senderText">Người thương của bạn</span></div><div class="english-signoff">HAPPY WOMEN DAY</div></div>
+<div class="envelope" id="envelope"><div class="env-back"></div><div class="env-left"></div><div class="env-right"></div><div class="env-front"></div><div class="env-flap"></div><div class="seal">♡</div></div>
+<button class="open-prompt" id="envelopeButton">MỞ BỨC THƯ CHÚC MỪNG 20/10 ♡</button>
+</div>
+</div>
+<p class="note preview-note">Nền vũ trụ • Hoa nở • Lời nhắn bay • Phong bì phát sáng</p>
+</section>
+</main>
+<footer class="footer">FLEUR · MỘT CHÚT TINH TẾ, MỘT CHÚT YÊU THƯƠNG · 20/10</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<audio id="audio" loop></audio>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const recipientInput = $('recipientInput'), senderInput = $('senderInput'), messageInput = $('messageInput');
+  let isOpen = false, photoUrl = '', musicUrl = '', toastTimer, surpriseStarted = false, youtubePaused = false;
+  const songCatalog = {
+    'hon-ca-yeu': {videoId:'__kGJZ-kPno', title:'Hơn Cả Yêu — Đức Phúc', query:'Hơn Cả Yêu Đức Phúc Official MV', description:'Giai điệu ngọt ngào dành cho một lời yêu thương chân thành.'},
+    'ngay-dau-tien': {videoId:'rIXhXaQ8tiM', title:'Ngày Đầu Tiên — Đức Phúc', query:'Ngày Đầu Tiên Đức Phúc Official Music Video', description:'Lãng mạn, ấm áp; phù hợp với lời hứa và kỷ niệm đẹp.'},
+    'co-em-cho': {videoId:'_YzngEllRgM', title:'Có Em Chờ — MIN ft. Mr A', query:'Có Em Chờ MIN Mr A Official MV', description:'Nhẹ nhàng, trẻ trung, hợp với tấm thiệp dễ thương.'},
+    'noi-nay-co-anh': {videoId:'FN7ALfpGxiI', title:'Nơi Này Có Anh — Sơn Tùng M-TP', query:'Nơi Này Có Anh Sơn Tùng M-TP Official Music Video', description:'Không khí mơ mộng cho lời nhắn gửi người đặc biệt.'},
+    'anh-nang-cua-anh': {videoId:'-GgTYmhzviw', title:'Ánh Nắng Của Anh — Đức Phúc', query:'Ánh Nắng Của Anh Đức Phúc Official MV', description:'Dịu dàng và ấm áp như lời cảm ơn người luôn ở bên.'},
+    'minh-yeu-nhau-di': {videoId:'X8mhF6HgzVA', title:'Mình Yêu Nhau Đi — Bích Phương', query:'Mình Yêu Nhau Đi Bích Phương Official MV', description:'Vui tươi, đáng yêu và đầy năng lượng tích cực.'},
+    'mot-nha': {videoId:'TKlXc3iywoM', title:'Một Nhà — Da LAB', query:'Một Nhà Da LAB Official MV', description:'Gần gũi, ấm áp, phù hợp với lời chúc về sự gắn bó.'},
+    'nam-lay-tay-anh': {videoId:'Jdnmk4RO9kY', title:'Nắm Lấy Tay Anh — Tuấn Hưng', query:'Nắm Lấy Tay Anh Tuấn Hưng Official MV', description:'Một lựa chọn sâu lắng cho lời hứa đồng hành lâu dài.'},
+    'yeu-em-rat-nhieu': {videoId:'OK7cYGAwJ8c', title:'Yêu Em Rất Nhiều — Hoàng Tôn', query:'Yêu Em Rất Nhiều Hoàng Tôn Official MV', description:'Ngọt ngào, phù hợp với thiệp tình yêu và lời tỏ bày.'},
+    'cam-on-tinh-yeu': {videoId:'UCX_RhPygOM', title:'Cảm Ơn Tình Yêu — Uyên Linh', query:'Cảm Ơn Tình Yêu Uyên Linh Official', description:'Gợi cảm giác biết ơn, trân trọng và yêu thương.'}
+  };
+  // Build the visual 10-song selection list from the same catalog used in shared links.
+  function renderSongList(){
+    const list=$('songList'); if(!list)return;
+    list.innerHTML='';
+    Object.entries(songCatalog).forEach(([key,song],index)=>{
+      const button=document.createElement('button');
+      button.type='button'; button.className='song-option'+(key===$('songSelect').value?' selected':'');
+      button.setAttribute('aria-pressed',key===$('songSelect').value?'true':'false');
+      button.innerHTML=`<span class="song-number">${String(index+1).padStart(2,'0')}</span><span class="song-info"><span class="song-title"></span><span class="song-description"></span><span class="song-check">${key===$('songSelect').value?'✓ Đang chọn':'♡ Chọn bài này'}</span></span>`;
+      button.querySelector('.song-title').textContent=song.title;
+      button.querySelector('.song-description').textContent=song.description;
+      button.addEventListener('click',()=>{$('songSelect').value=key;updateSongDescription();renderSongList();toast('Đã chọn: '+song.title);if(surpriseStarted&&!musicUrl)startSelectedMusic();});
+      list.appendChild(button);
+    });
+  }
+  function enableRecipientMode(){
+    if(location.hash && /(?:^#|&)card=/.test(location.hash)){
+      document.body.classList.add('recipient-mode');
+      const button=$('envelopeButton');
+      if(button)button.textContent='MỞ BỨC THƯ CHÚC MỪNG 20/10 ♡';
+    }
+  }
+  const toast = text => { const el=$('toast'); el.textContent=text; el.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('show'),2600); };
+  const state = () => ({to:recipientInput.value.trim() || 'Người thương', from:senderInput.value.trim() || 'Một người thương', message:messageInput.value.trim() || 'Chúc bạn một ngày 20/10 thật hạnh phúc!', song:$('songSelect').value || 'hon-ca-yeu'});
+  function updateCard(silent=false){const s=state();$('recipientText').textContent=s.to;$('senderText').textContent=s.from;$('messageText').textContent=s.message; document.title=`Thiệp 20/10 gửi ${s.to} | Fleur`; if(!silent)toast('Đã cập nhật nội dung thiệp ✿');}
+  function toggleEnvelope(force){isOpen=typeof force==='boolean'?force:!isOpen;$('envelope').classList.toggle('open',isOpen);$('letter').classList.toggle('open',isOpen);$('envelopeButton').textContent=isOpen?'THIỆP ĐÃ MỞ ♡':'MỞ THIỆP ✧';if(isOpen) flowerBurst(13);}
+  function startSelectedMusic(){
+    const audio=$('audio');
+    const song=songCatalog[$('songSelect').value];
+    if(audio.src){
+      audio.loop=true;
+      const play=audio.play();
+      if(play&&typeof play.catch==='function')play.catch(()=>toast('Trình duyệt chưa cho phép phát tệp nhạc; hãy nhấn nút phát nhạc.'));
+      youtubePaused=false;
+      $('musicStatus').textContent='♫ Nhạc nền riêng đang được phát';
+      $('musicBtn').textContent='Ⅱ Tạm dừng nhạc';
+      return;
+    }
+    if(!song||!song.videoId){$('musicStatus').textContent='♫ Hãy chọn một bài nhạc gợi ý';return;}
+    const player=$('musicEmbed');
+    player.innerHTML='';
+    const iframe=document.createElement('iframe');
+    iframe.title='Nhạc nền: '+song.title;
+    iframe.allow='autoplay; encrypted-media; picture-in-picture';
+    iframe.referrerPolicy='strict-origin-when-cross-origin';
+    iframe.setAttribute('allowfullscreen','');
+    iframe.src='https://www.youtube-nocookie.com/embed/'+song.videoId+'?autoplay=1&controls=0&loop=1&playlist='+song.videoId+'&playsinline=1&rel=0&modestbranding=1&enablejsapi=1';
+    player.appendChild(iframe);
+    youtubePaused=false;
+    $('musicStatus').textContent='♫ Nhạc nền: '+song.title;
+    $('musicBtn').textContent='Ⅱ Tạm dừng nhạc';
+  }
+  let currentStoryStage='intro';
+  function showStoryStage(stage){
+    currentStoryStage=stage;
+    ['roseScreen','letterScreen','finalScreen'].forEach(id=>$(id).hidden=true);
+    $('introScreen').style.display='none';
+    if(stage==='rose'){$('roseScreen').hidden=false;$('scene').classList.add('revealed');flowerBurst(12);}
+    if(stage==='letter'){$('letterScreen').hidden=false;populateStoryLetter();}
+    if(stage==='final'){$('finalScreen').hidden=false;flowerBurst(48);setTimeout(()=>flowerBurst(28),800);}
+  }
+  function populateStoryLetter(){const s=state();$('storyRecipient').textContent=s.to.toUpperCase();$('storySender').textContent=s.from;$('storyMessage').textContent=s.message;}
+  function stopVoice(){if('speechSynthesis' in window)window.speechSynthesis.cancel();$('voiceBtn').textContent='🔊 Đọc thư thành tiếng (tùy chọn)';}
+  function startSurprise(){
+    if(surpriseStarted)return;
+    surpriseStarted=true;
+    startSelectedMusic();
+    $('introScreen').classList.add('is-leaving');
+    setTimeout(()=>showStoryStage('rose'),520);
+  }
+  $('toLetterBtn').addEventListener('click',()=>showStoryStage('letter'));
+  $('readAgainBtn').addEventListener('click',()=>{stopVoice();showStoryStage('letter');$('letterCard')?.scrollTo(0,0);});
+  $('nextFinalBtn').addEventListener('click',()=>{stopVoice();showStoryStage('final');});
+  $('restartStoryBtn').addEventListener('click',()=>{stopVoice();surpriseStarted=false;currentStoryStage='intro';$('finalScreen').hidden=true;$('roseScreen').hidden=true;$('letterScreen').hidden=true;$('introScreen').style.display='';$('introScreen').classList.remove('is-leaving');$('scene').classList.remove('revealed');});
+  $('voiceBtn').addEventListener('click',()=>{
+    if(!('speechSynthesis' in window)){toast('Trình duyệt này chưa hỗ trợ đọc thư thành tiếng.');return;}
+    if(window.speechSynthesis.speaking){stopVoice();return;}
+    const s=state();const utterance=new SpeechSynthesisUtterance(`Gửi ${s.to}. ${s.message}. Thương mến, ${s.from}.`);utterance.lang='vi-VN';utterance.rate=.9;utterance.pitch=1.05;utterance.onend=()=>{$('voiceBtn').textContent='🔊 Đọc lại thư thành tiếng';};$('voiceBtn').textContent='Ⅱ Dừng đọc thư';window.speechSynthesis.speak(utterance);
+  });
+  function sendYoutubeCommand(command){
+    const iframe=$('musicEmbed').querySelector('iframe');
+    if(iframe&&iframe.contentWindow){iframe.contentWindow.postMessage(JSON.stringify({event:'command',func:command,args:[]}), '*');}
+  }
+  function flowerBurst(n=8){const scene=$('scene'),items=['🌸','🌷','✿','♡','✨'];for(let i=0;i<n;i++){const p=document.createElement('span');p.className='particle';p.textContent=items[Math.floor(Math.random()*items.length)];p.style.left=(Math.random()*96)+'%';p.style.fontSize=(12+Math.random()*18)+'px';p.style.animationDuration=(3+Math.random()*4)+'s';p.style.animationDelay=(Math.random()*.8)+'s';scene.appendChild(p);setTimeout(()=>p.remove(),8500);}}
+  function packState(){return btoa(unescape(encodeURIComponent(JSON.stringify(state()))));}
+  function unpackState(){try{const hash=location.hash.match(/(?:^#|&)card=([^&]+)/);if(!hash)return;const data=JSON.parse(decodeURIComponent(escape(atob(hash[1]))));recipientInput.value=String(data.to||'').slice(0,70);senderInput.value=String(data.from||'').slice(0,70);messageInput.value=String(data.message||'').slice(0,600);if(data.song && songCatalog[data.song])$('songSelect').value=data.song;updateSongDescription();updateCard(true);}catch(e){console.warn('Không đọc được dữ liệu thiệp từ link.',e);}}
+  function isLocalPreview(){return location.protocol==='file:' || ['localhost','127.0.0.1','::1'].includes(location.hostname);}
+  function getPublicBaseUrl(){
+    let raw='';
+    if(isLocalPreview()) raw=$('publicBaseUrl').value.trim();
+    else if(location.protocol==='https:' || location.protocol==='http:') raw=location.href;
+    if(!raw) return null;
+    try{
+      const url=new URL(raw);
+      if(!['https:','http:'].includes(url.protocol) || ['localhost','127.0.0.1','::1'].includes(url.hostname)) return null;
+      url.search='';url.hash='';
+      if(url.pathname.endsWith('/')) url.pathname+='index.html';
+      return url;
+    }catch(e){return null;}
+  }
+  function makeShareUrl(){const base=getPublicBaseUrl();if(!base)return null;base.hash='card='+encodeURIComponent(packState());return base.href;}
+  function showShare(){
+    const url=makeShareUrl();$('shareBox').classList.add('show');$('qrcode').innerHTML='';$('qrDownloadActions').hidden=true;
+    $('shareUrl').dataset.url=url||'';
+    if(!url){$('shareUrl').textContent='Chưa có link công khai. Hãy đăng tải website lên hosting rồi nhập URL ở ô bên dưới.';$('publicUrlField').hidden=false;return null;}
+    $('shareUrl').textContent=url;
+    if(window.QRCode){new QRCode($('qrcode'),{text:url,width:260,height:260,colorDark:'#49343b',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});$('qrDownloadActions').hidden=false;}
+    else {$('qrcode').textContent='Không tải được thư viện QR. Hãy kiểm tra kết nối Internet rồi thử lại.';}
+    return url;
+  }
+  function downloadQrImage(){
+    const holder=$('qrcode');const qrCanvas=holder.querySelector('canvas');const qrImg=holder.querySelector('img');
+    let dataUrl='';
+    if(qrCanvas){const pad=18,out=document.createElement('canvas');out.width=qrCanvas.width+pad*2;out.height=qrCanvas.height+pad*2;const ctx=out.getContext('2d');ctx.fillStyle='#ffffff';ctx.fillRect(0,0,out.width,out.height);ctx.drawImage(qrCanvas,pad,pad);dataUrl=out.toDataURL('image/png');}
+    else if(qrImg&&qrImg.src&&qrImg.src.startsWith('data:image/')) dataUrl=qrImg.src;
+    if(!dataUrl){toast('Chưa có mã QR để tải. Hãy tạo lại mã QR sau khi nhập link website công khai.');return;}
+    const a=document.createElement('a');a.href=dataUrl;a.download='thiep-20-10-qr.png';document.body.appendChild(a);a.click();a.remove();toast('Đã tải ảnh QR PNG. Bạn có thể gửi ảnh này qua Zalo hoặc Messenger.');
+  }
+  if(isLocalPreview()){$('publicUrlField').hidden=false;} 
+  function updateSongDescription(){const song=songCatalog[$('songSelect').value];$('songDescription').textContent=song?song.description:'';}
+  $('songSelect').addEventListener('change',()=>{updateSongDescription();renderSongList();toast('Đã chọn: '+songCatalog[$('songSelect').value].title);});
+  $('listenSongBtn').addEventListener('click',()=>{const song=songCatalog[$('songSelect').value];if(!song)return;const url=song.videoId?'https://www.youtube.com/watch?v='+song.videoId:'https://www.youtube.com/results?search_query='+encodeURIComponent(song.query);window.open(url,'_blank','noopener,noreferrer');toast('Đang mở bài: '+song.title);});
+  $('introImageButton').addEventListener('click',startSurprise);
+  const openSelectedSong = () => {const song=songCatalog[$('songSelect').value];if(song&&song.videoId)window.open('https://www.youtube.com/watch?v='+song.videoId,'_blank','noopener,noreferrer');};
+  $('musicStatus').addEventListener('click',openSelectedSong);
+  $('musicStatus').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openSelectedSong();}});
+  $('updateBtn').addEventListener('click',()=>updateCard());[recipientInput,senderInput,messageInput].forEach(el=>el.addEventListener('input',()=>{const s=state();$('recipientText').textContent=s.to;$('senderText').textContent=s.from;$('messageText').textContent=s.message;}));
+  $('openBtn').addEventListener('click',()=>toggleEnvelope());$('envelopeButton').addEventListener('click',()=>toggleEnvelope());
+  $('photoInput').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;if(!file.type.startsWith('image/')){toast('Vui lòng chọn tệp ảnh.');return;}if(photoUrl)URL.revokeObjectURL(photoUrl);photoUrl=URL.createObjectURL(file);$('coverImage').src=photoUrl;const scene=$('scene');let img=$('customPhoto');if(!img){img=document.createElement('img');img.id='customPhoto';img.alt='Ảnh trang trí do bạn chọn';img.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.12;z-index:0;pointer-events:none';scene.prepend(img);}img.src=photoUrl;toast('Đã thay ảnh mở đầu cho bản xem trước.');});
+  $('musicInput').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;if(!file.type.startsWith('audio/')){toast('Vui lòng chọn tệp âm thanh.');return;}if(musicUrl)URL.revokeObjectURL(musicUrl);musicUrl=URL.createObjectURL(file);$('audio').src=musicUrl;$('audio').load();$('musicEmbed').innerHTML='';toast('Đã chọn nhạc riêng; nhạc này sẽ phát khi mở ảnh bất ngờ.');});
+  $('musicBtn').addEventListener('click',async()=>{const a=$('audio');if(a.src){if(a.paused){try{await a.play();$('musicBtn').textContent='Ⅱ Tạm dừng nhạc';}catch(e){toast('Trình duyệt chưa cho phép phát nhạc. Hãy thử lại.');}}else{a.pause();$('musicBtn').textContent='♫ Phát nhạc';}return;}const iframe=$('musicEmbed').querySelector('iframe');if(!iframe){startSelectedMusic();return;}youtubePaused=!youtubePaused;sendYoutubeCommand(youtubePaused?'pauseVideo':'playVideo');$('musicBtn').textContent=youtubePaused?'♫ Phát nhạc':'Ⅱ Tạm dừng nhạc';});
+  $('shareBtn').addEventListener('click',()=>{updateCard(true);const url=showShare();if(url)toast('Đã tạo link thiệp công khai để chia sẻ.');else toast('Cần đăng tải website và nhập URL công khai trước khi chia sẻ.');});
+  $('qrBtn').addEventListener('click',()=>{updateCard(true);const url=showShare();if(!url){toast('Không thể tạo QR dùng được từ đường dẫn file:///. Hãy nhập URL website đã đăng tải.');return;}if(!window.QRCode){toast('Chưa tải được thư viện QR. Kiểm tra kết nối Internet rồi thử lại.');return;}toast('Đã tạo mã QR cho thiệp. Bấm “Tải ảnh QR xuống” để gửi qua Zalo hoặc Messenger.');});
+  $('downloadQrBtn').addEventListener('click',downloadQrImage);
+  $('publicBaseUrl').addEventListener('change',()=>{if($('shareBox').classList.contains('show')){const url=showShare();if(url)toast('Đã cập nhật link và mã QR từ website công khai.');}});
+  $('copyBtn').addEventListener('click',async()=>{const url=$('shareUrl').dataset.url||'';if(!url){toast('Chưa có link công khai để sao chép.');return;}try{await navigator.clipboard.writeText(url);toast('Đã sao chép link!');}catch(e){const range=document.createRange();range.selectNodeContents($('shareUrl'));const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);toast('Hãy sao chép đường link đang được chọn.');}});
+  $('nativeShareBtn').addEventListener('click',async()=>{const url=$('shareUrl').dataset.url||'';if(!url){toast('Chưa có link công khai để chia sẻ.');return;}if(navigator.share){try{await navigator.share({title:'Thiệp hoa điện tử 20/10',text:'Mình gửi bạn một tấm thiệp nhỏ 💐',url});}catch(e){if(e.name!=='AbortError')toast('Không thể mở bảng chia sẻ trên thiết bị này.');}}else{try{await navigator.clipboard.writeText(url);toast('Thiết bị chưa hỗ trợ chia sẻ nhanh; link đã được sao chép.');}catch(e){toast('Bạn hãy sao chép link ở phía trên.');}}});
+  $('musicStatus').textContent='♫ Nhạc nền sẽ bắt đầu khi bạn chạm vào ảnh';
+  $('letter').setAttribute('aria-hidden','true');
+  // Occasional falling petals, with a restrained pace for a refined look.
+  setInterval(()=>{if(document.visibilityState==='visible'&&Math.random()>.38)flowerBurst(1);},2400);
+  unpackState();updateSongDescription();renderSongList();enableRecipientMode();updateCard(true);
+})();
+</script>
+</body>
+</html>
