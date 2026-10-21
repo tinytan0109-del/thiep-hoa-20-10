@@ -92,6 +92,38 @@ body.recipient-mode .intro-image-button{width:min(92%,520px)}body.recipient-mode
 @keyframes stemGrow{from{transform:scaleY(0)}to{transform:scaleY(1)}}@keyframes roseArrive{0%{transform:scale(.1) rotate(-35deg);opacity:0}75%{transform:scale(1.12) rotate(5deg);opacity:1}100%{transform:scale(1) rotate(0)}}@keyframes finalBloom{0%{transform:scale(.15);opacity:0;filter:blur(8px)}70%{transform:scale(1.12);opacity:1;filter:blur(0)}100%{transform:scale(1)}}@keyframes sparklePulse{0%,100%{opacity:.5;transform:scale(.95)}50%{opacity:1;transform:scale(1.08)}}
 @media(max-width:520px){.story-screen{padding:20px 16px}.bloom-rose{width:155px;height:155px;transform:scale(.9)}.petal{width:56px;height:83px}.letter-card{padding:24px 18px 18px;max-height:64svh}.letter-body{font-size:13px}.story-button{padding:12px 18px}.rose-stem{height:23%;top:37%}}
 
+
+/* === Fix hiển thị tiếng Việt trong lời chúc và tên người nhận/người gửi === */
+:root{font-synthesis:none;text-size-adjust:100%;-webkit-text-size-adjust:100%}
+#recipientText,#senderText,#messageText,#storyRecipient,#storySender,#storyMessage,
+.letter .to,.letter .message,.letter .from,.letter-card .letter-kicker,.letter-card h2,
+.letter-body,.letter-from{
+  font-family:"Segoe UI",Arial,"Noto Sans",sans-serif!important;
+  font-kerning:normal;
+  letter-spacing:normal;
+  word-break:normal;
+  overflow-wrap:anywhere;
+  hyphens:none;
+}
+.letter .message{
+  width:100%;max-width:100%;min-width:0;flex:1 1 auto;min-height:0;
+  font-size:clamp(11px,1.05vw,13px);line-height:1.55;
+  white-space:pre-wrap;text-align:center;overflow-y:auto;overflow-x:hidden;
+  padding:0 3px;
+}
+.letter .to,.letter .from{line-height:1.5;max-width:100%;}
+.letter-card{width:min(100%,430px);min-width:0;}
+.letter-card .letter-body{
+  display:block;width:100%;max-width:100%;min-width:0;
+  font-size:clamp(13px,3.6vw,15px);line-height:1.75;
+  white-space:pre-wrap;overflow-wrap:anywhere;word-break:normal;
+  text-align:center;margin:0;color:#674a53;
+}
+.letter-card .letter-from{font-size:13px;line-height:1.7;overflow-wrap:anywhere;}
+@media(max-width:520px){
+  .letter .message{font-size:11px;line-height:1.5;}
+  .letter-card .letter-body{font-size:13px;line-height:1.7;}
+}
 </style>
 </head>
 <body>
