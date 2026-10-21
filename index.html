@@ -211,7 +211,8 @@ body, button, input, textarea, select,
 <option value="nam-lay-tay-anh">Nắm Lấy Tay Anh — Tuấn Hưng</option>
 <option value="yeu-em-rat-nhieu">Yêu Em Rất Nhiều — Hoàng Tôn</option>
 <option value="cam-on-tinh-yeu">Cảm Ơn Tình Yêu — Uyên Linh</option>
-</select><div class="song-list" id="songList" aria-label="Danh sách 10 bài nhạc gợi ý"></div><p class="music-hint" id="songDescription">Chọn một bài gợi ý bên trên hoặc tải nhạc riêng từ máy.</p><div class="song-actions"><button class="btn secondary" id="listenSongBtn" type="button">↗ Nghe bài gợi ý trên YouTube</button></div></div>
+<option value="chua-bao-gio-me-ke">Chưa Bao Giờ Mẹ Kể — MIN ft. ERIK</option>
+</select><div class="song-list" id="songList" aria-label="Danh sách 11 bài nhạc gợi ý"></div><p class="music-hint" id="songDescription">Chọn một bài gợi ý bên trên hoặc tải nhạc riêng từ máy.</p><div class="song-actions"><button class="btn secondary" id="listenSongBtn" type="button">↗ Nghe bài gợi ý trên YouTube</button></div></div>
 <div class="file-row"><div class="file-input">🌸 Ảnh mở đầu / trang trí<input type="file" id="photoInput" accept="image/*"></div><div class="file-input">♫ Nhạc nền riêng (tùy chọn)<input type="file" id="musicInput" accept="audio/*"><p class="music-hint" id="customMusicStatus">Nếu chọn tệp nhạc riêng, danh sách nhạc gợi ý sẽ tự tắt để không phát chồng. Tệp riêng chỉ có trên thiết bị này.</p><div class="song-actions"><button class="btn secondary" id="clearMusicBtn" type="button" hidden>↺ Bỏ nhạc riêng, bật nhạc gợi ý</button></div></div></div>
 <div class="actions"><button class="btn primary" id="updateBtn">Cập nhật thiệp</button><button class="btn secondary" id="openBtn">Mở / đóng thiệp</button><button class="btn gold" id="musicBtn">♫ Phát / tạm dừng nhạc</button></div>
 <div class="actions"><button class="btn secondary" id="shareBtn">↗ Tạo link chia sẻ</button><button class="btn secondary" id="qrBtn">▦ Tạo mã QR</button></div>
@@ -278,7 +279,8 @@ body, button, input, textarea, select,
     'mot-nha': {videoId:'TKlXc3iywoM', title:'Một Nhà — Da LAB', query:'Một Nhà Da LAB Official MV', description:'Gần gũi, ấm áp, phù hợp với lời chúc về sự gắn bó.'},
     'nam-lay-tay-anh': {videoId:'Jdnmk4RO9kY', title:'Nắm Lấy Tay Anh — Tuấn Hưng', query:'Nắm Lấy Tay Anh Tuấn Hưng Official MV', description:'Một lựa chọn sâu lắng cho lời hứa đồng hành lâu dài.'},
     'yeu-em-rat-nhieu': {videoId:'OK7cYGAwJ8c', title:'Yêu Em Rất Nhiều — Hoàng Tôn', query:'Yêu Em Rất Nhiều Hoàng Tôn Official MV', description:'Ngọt ngào, phù hợp với thiệp tình yêu và lời tỏ bày.'},
-    'cam-on-tinh-yeu': {videoId:'UCX_RhPygOM', title:'Cảm Ơn Tình Yêu — Uyên Linh', query:'Cảm Ơn Tình Yêu Uyên Linh Official', description:'Gợi cảm giác biết ơn, trân trọng và yêu thương.'}
+    'cam-on-tinh-yeu': {videoId:'UCX_RhPygOM', title:'Cảm Ơn Tình Yêu — Uyên Linh', query:'Cảm Ơn Tình Yêu Uyên Linh Official', description:'Gợi cảm giác biết ơn, trân trọng và yêu thương.'},
+    'chua-bao-gio-me-ke': {videoId:'sICoUsvVAok', title:'Chưa Bao Giờ Mẹ Kể — MIN ft. ERIK', query:'MIN ft ERIK Chưa Bao Giờ Mẹ Kể Official MV', description:'Ca khúc ấm áp, xúc động để gửi lời yêu thương và biết ơn mẹ.'}
   };
   // Build the visual song list. A local audio file takes exclusive control of playback,
   // so suggested songs are disabled and any previous suggested selection is cleared.
