@@ -303,7 +303,21 @@ body, button, input, textarea, select,
   }
   const toast = text => { const el=$('toast'); el.textContent=text; el.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('show'),2600); };
   const state = () => ({to:recipientInput.value.trim() || 'Người thương', from:senderInput.value.trim() || 'Một người thương', message:messageInput.value.trim() || 'Chúc bạn một ngày 20/10 thật hạnh phúc!', song:$('songSelect').value || 'hon-ca-yeu'});
-  function updateCard(silent=false){const s=state();$('recipientText').textContent=s.to;$('senderText').textContent=s.from;$('messageText').textContent=s.message; document.title=`Thiệp 20/10 gửi ${s.to} | Fleur`; if(!silent)toast('Đã cập nhật nội dung thiệp ✿');}
+  // Keep BOTH the envelope preview and the animated recipient letter synced with the editor.
+  // Previously only the legacy envelope preview was updated while typing, so the story letter
+  // could keep showing the old/default text until it was re-opened.
+  function syncLetterContent(){
+    const s=state();
+    $('recipientText').textContent=s.to;
+    $('senderText').textContent=s.from;
+    $('messageText').textContent=s.message;
+    $('storyRecipient').textContent=s.to.toLocaleUpperCase('vi-VN');
+    $('storySender').textContent=s.from;
+    $('storyMessage').textContent=s.message;
+    document.title=`Thiệp 20/10 gửi ${s.to} | Fleur`;
+    return s;
+  }
+  function updateCard(silent=false){syncLetterContent();if(!silent)toast('Đã cập nhật nội dung thiệp ✿');}
   function toggleEnvelope(force){isOpen=typeof force==='boolean'?force:!isOpen;$('envelope').classList.toggle('open',isOpen);$('letter').classList.toggle('open',isOpen);$('envelopeButton').textContent=isOpen?'THIỆP ĐÃ MỞ ♡':'MỞ THIỆP ✧';if(isOpen) flowerBurst(13);}
   function startSelectedMusic(){
     const audio=$('audio');
@@ -340,7 +354,7 @@ body, button, input, textarea, select,
     if(stage==='letter'){$('letterScreen').hidden=false;populateStoryLetter();$('letterScreen').scrollTop=0;}
     if(stage==='final'){$('finalScreen').hidden=false;flowerBurst(48);setTimeout(()=>flowerBurst(28),800);}
   }
-  function populateStoryLetter(){const s=state();$('storyRecipient').textContent=s.to.toUpperCase();$('storySender').textContent=s.from;$('storyMessage').textContent=s.message;}
+  function populateStoryLetter(){syncLetterContent();}
   function stopVoice(){if('speechSynthesis' in window)window.speechSynthesis.cancel();$('voiceBtn').textContent='🔊 Đọc thư thành tiếng (tùy chọn)';}
   function startSurprise(){
     if(surpriseStarted)return;
@@ -405,7 +419,8 @@ body, button, input, textarea, select,
   const openSelectedSong = () => {const song=songCatalog[$('songSelect').value];if(song&&song.videoId)window.open('https://www.youtube.com/watch?v='+song.videoId,'_blank','noopener,noreferrer');};
   $('musicStatus').addEventListener('click',openSelectedSong);
   $('musicStatus').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openSelectedSong();}});
-  $('updateBtn').addEventListener('click',()=>updateCard());[recipientInput,senderInput,messageInput].forEach(el=>el.addEventListener('input',()=>{const s=state();$('recipientText').textContent=s.to;$('senderText').textContent=s.from;$('messageText').textContent=s.message;}));
+  $('updateBtn').addEventListener('click',()=>updateCard());
+  [recipientInput,senderInput,messageInput].forEach(el=>el.addEventListener('input',()=>updateCard(true)));
   $('openBtn').addEventListener('click',()=>toggleEnvelope());$('envelopeButton').addEventListener('click',()=>toggleEnvelope());
   $('photoInput').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;if(!file.type.startsWith('image/')){toast('Vui lòng chọn tệp ảnh.');return;}if(photoUrl)URL.revokeObjectURL(photoUrl);photoUrl=URL.createObjectURL(file);$('coverImage').src=photoUrl;const scene=$('scene');let img=$('customPhoto');if(!img){img=document.createElement('img');img.id='customPhoto';img.alt='Ảnh trang trí do bạn chọn';img.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.12;z-index:0;pointer-events:none';scene.prepend(img);}img.src=photoUrl;toast('Đã thay ảnh mở đầu cho bản xem trước.');});
   $('musicInput').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;if(!file.type.startsWith('audio/')){toast('Vui lòng chọn tệp âm thanh.');return;}if(musicUrl)URL.revokeObjectURL(musicUrl);musicUrl=URL.createObjectURL(file);$('audio').src=musicUrl;$('audio').load();$('musicEmbed').innerHTML='';toast('Đã chọn nhạc riêng; nhạc này sẽ phát khi mở ảnh bất ngờ.');});
