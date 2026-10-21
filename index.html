@@ -36,7 +36,7 @@ body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;bac
 .footer{color:#9d83b8}.toast{background:#271138;border:1px solid #bd6fce;color:#fff0ff;box-shadow:0 8px 35px #0008}
 /* Danh sách nhạc dạng thẻ, dễ chọn hơn menu thả xuống */
 .visually-hidden{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
-.song-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.song-option{min-width:0;display:flex;gap:8px;align-items:flex-start;text-align:left;padding:10px 9px;border:1px solid #563365;background:linear-gradient(145deg,#1b102a,#11091e);border-radius:12px;color:#f4e2ff;transition:.2s}.song-option:hover{border-color:#d975bd;transform:translateY(-1px);background:#291239}.song-option.selected{border-color:#ff9cd9;background:linear-gradient(145deg,#431741,#27102e);box-shadow:inset 0 0 0 1px #ff95d32b,0 0 16px #df55b51c}.song-number{flex:0 0 25px;width:25px;height:25px;border-radius:8px;display:grid;place-items:center;background:#362045;color:#ffb1df;font:700 10px Arial,sans-serif}.song-option.selected .song-number{background:#e75bac;color:white}.song-info{min-width:0;display:block}.song-title{display:block;font:700 11px/1.35 Arial,sans-serif;color:#fff2fa}.song-description{display:block;margin-top:5px;font:10px/1.4 Arial,sans-serif;color:#bca4ce}.song-check{display:block;color:#ff9ed6;font:12px Arial,sans-serif;min-height:14px;margin-top:3px}.song-actions .btn{font-size:11px}.music-picker .field label{margin-bottom:0}
+.song-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:9px}.song-option{min-width:0;display:flex;gap:8px;align-items:flex-start;text-align:left;padding:10px 9px;border:1px solid #563365;background:linear-gradient(145deg,#1b102a,#11091e);border-radius:12px;color:#f4e2ff;transition:.2s}.song-option:hover{border-color:#d975bd;transform:translateY(-1px);background:#291239}.song-option.selected{border-color:#ff9cd9;background:linear-gradient(145deg,#431741,#27102e);box-shadow:inset 0 0 0 1px #ff95d32b,0 0 16px #df55b51c}.song-number{flex:0 0 25px;width:25px;height:25px;border-radius:8px;display:grid;place-items:center;background:#362045;color:#ffb1df;font:700 10px Arial,sans-serif}.song-option.selected .song-number{background:#e75bac;color:white}.song-info{min-width:0;display:block}.song-title{display:block;font:700 11px/1.35 Arial,sans-serif;color:#fff2fa}.song-description{display:block;margin-top:5px;font:10px/1.4 Arial,sans-serif;color:#bca4ce}.song-check{display:block;color:#ff9ed6;font:12px Arial,sans-serif;min-height:14px;margin-top:3px}.song-actions .btn{font-size:11px}.song-option:disabled{opacity:.42;cursor:not-allowed;transform:none!important;filter:saturate(.45)}.song-option:disabled:hover{border-color:#563365;background:linear-gradient(145deg,#1b102a,#11091e)}.song-actions .btn:disabled{opacity:.45;cursor:not-allowed;transform:none}.music-picker .field label{margin-bottom:0}
 /* Link gedeeld sẽ mở thẳng trải nghiệm nhận thiệp, không hiện bảng biên tập */
 body.recipient-mode .topbar,body.recipient-mode .editor-column,body.recipient-mode .preview-head,body.recipient-mode .footer,body.recipient-mode .preview-note{display:none!important}
 body.recipient-mode .layout{display:block;width:100%;max-width:none;margin:0;padding:0}
@@ -200,6 +200,7 @@ body, button, input, textarea, select,
 <div class="field"><label for="senderInput">Tên người gửi</label><input id="senderInput" maxlength="70" value="Người thương của bạn" placeholder="Tên của bạn"></div>
 <div class="field"><label for="messageInput">Lời chúc 20/10</label><textarea id="messageInput" rows="7">Chúc bạn luôn rạng rỡ như những đóa hoa, dịu dàng với thế giới và yêu thương chính mình thật nhiều. Mong mỗi ngày của bạn đều ngập tràn bình yên, hạnh phúc và những điều ngọt ngào nhất. 🌷</textarea><p class="music-hint">Bạn có thể viết lời chúc dài tùy ý. Lá thư của người nhận sẽ tự mở rộng; với nội dung dài, người nhận chỉ cần cuộn màn hình để đọc hết.</p></div>
 <div class="field music-picker"><label for="songSelect">♫ Gợi ý nhạc tình yêu & lời nhắn</label><select id="songSelect" class="visually-hidden" aria-hidden="true" tabindex="-1">
+<option value="">Chưa chọn nhạc gợi ý</option>
 <option value="hon-ca-yeu">Hơn Cả Yêu — Đức Phúc</option>
 <option value="ngay-dau-tien">Ngày Đầu Tiên — Đức Phúc</option>
 <option value="co-em-cho">Có Em Chờ — MIN ft. Mr A</option>
@@ -210,11 +211,11 @@ body, button, input, textarea, select,
 <option value="nam-lay-tay-anh">Nắm Lấy Tay Anh — Tuấn Hưng</option>
 <option value="yeu-em-rat-nhieu">Yêu Em Rất Nhiều — Hoàng Tôn</option>
 <option value="cam-on-tinh-yeu">Cảm Ơn Tình Yêu — Uyên Linh</option>
-</select><div class="song-list" id="songList" aria-label="Danh sách 10 bài nhạc gợi ý"></div><p class="music-hint" id="songDescription">Giai điệu ngọt ngào dành cho một lời yêu thương chân thành.</p><div class="song-actions"><button class="btn secondary" id="listenSongBtn" type="button">↗ Nghe bài gợi ý trên YouTube</button></div></div>
-<div class="file-row"><div class="file-input">🌸 Ảnh mở đầu / trang trí<input type="file" id="photoInput" accept="image/*"></div><div class="file-input">♫ Nhạc nền riêng (tùy chọn)<input type="file" id="musicInput" accept="audio/*"><p class="music-hint">Nếu chọn tệp nhạc riêng, tệp này sẽ được ưu tiên phát khi bấm ảnh mở đầu.</p></div></div>
+</select><div class="song-list" id="songList" aria-label="Danh sách 10 bài nhạc gợi ý"></div><p class="music-hint" id="songDescription">Chọn một bài gợi ý bên trên hoặc tải nhạc riêng từ máy.</p><div class="song-actions"><button class="btn secondary" id="listenSongBtn" type="button">↗ Nghe bài gợi ý trên YouTube</button></div></div>
+<div class="file-row"><div class="file-input">🌸 Ảnh mở đầu / trang trí<input type="file" id="photoInput" accept="image/*"></div><div class="file-input">♫ Nhạc nền riêng (tùy chọn)<input type="file" id="musicInput" accept="audio/*"><p class="music-hint" id="customMusicStatus">Nếu chọn tệp nhạc riêng, danh sách nhạc gợi ý sẽ tự tắt để không phát chồng. Tệp riêng chỉ có trên thiết bị này.</p><div class="song-actions"><button class="btn secondary" id="clearMusicBtn" type="button" hidden>↺ Bỏ nhạc riêng, bật nhạc gợi ý</button></div></div></div>
 <div class="actions"><button class="btn primary" id="updateBtn">Cập nhật thiệp</button><button class="btn secondary" id="openBtn">Mở / đóng thiệp</button><button class="btn gold" id="musicBtn">♫ Phát / tạm dừng nhạc</button></div>
 <div class="actions"><button class="btn secondary" id="shareBtn">↗ Tạo link chia sẻ</button><button class="btn secondary" id="qrBtn">▦ Tạo mã QR</button></div>
-<div class="sharebox" id="shareBox"><strong>Link thiệp của bạn</strong><p id="shareUrl"></p><div class="actions"><button class="btn primary" id="copyBtn">Sao chép link</button><button class="btn secondary" id="nativeShareBtn">Chia sẻ</button></div><div id="qrcode" aria-label="Mã QR chia sẻ"></div><div class="actions" id="qrDownloadActions" hidden><button class="btn primary" id="downloadQrBtn" type="button">↓ Tải ảnh QR xuống (PNG)</button></div><div class="field" id="publicUrlField" hidden><label for="publicBaseUrl">Địa chỉ website đã đăng tải</label><input id="publicBaseUrl" type="url" inputmode="url" placeholder="https://tenban.github.io/thiep-hoa-20-10/"><p class="note">Bạn đang mở file trực tiếp trên máy tính. Hãy đăng tải website lên hosting công khai trước, rồi dán địa chỉ HTTPS vào đây. Đường dẫn file:/// chỉ mở được trên máy bạn nên QR kiểu đó sẽ không dùng được trên điện thoại khác.</p></div><p class="note">Mã QR sẽ mở đúng tên người nhận, tên người gửi, lời chúc và bài nhạc gợi ý đã chọn. Ảnh hoặc tệp nhạc riêng chọn từ máy tính không tự đi kèm link; muốn chia sẻ các tệp đó cần tải chúng lên hosting công khai.</p></div>
+<div class="sharebox" id="shareBox"><strong>Link thiệp của bạn</strong><p id="shareUrl"></p><div class="actions"><button class="btn primary" id="copyBtn">Sao chép link</button><button class="btn secondary" id="nativeShareBtn">Chia sẻ</button></div><div id="qrcode" aria-label="Mã QR chia sẻ"></div><div class="actions" id="qrDownloadActions" hidden><button class="btn primary" id="downloadQrBtn" type="button">↓ Tải ảnh QR xuống (PNG)</button></div><div class="field" id="publicUrlField" hidden><label for="publicBaseUrl">Địa chỉ website đã đăng tải</label><input id="publicBaseUrl" type="url" inputmode="url" placeholder="https://tenban.github.io/thiep-hoa-20-10/"><p class="note">Bạn đang mở file trực tiếp trên máy tính. Hãy đăng tải website lên hosting công khai trước, rồi dán địa chỉ HTTPS vào đây. Đường dẫn file:/// chỉ mở được trên máy bạn nên QR kiểu đó sẽ không dùng được trên điện thoại khác.</p></div><p class="note">Mã QR sẽ mở đúng tên người nhận, tên người gửi, lời chúc và bài nhạc gợi ý đã chọn. Nếu đang dùng nhạc riêng từ máy, đường link sẽ không chọn nhạc gợi ý và người nhận sẽ không có tệp nhạc đó; muốn người nhận nghe cùng bản nhạc, cần tải tệp lên hosting công khai.</p></div>
 <p class="note">Mẹo: sau khi chỉnh sửa, bấm “Cập nhật thiệp”. Bạn có thể mở phong bì để xem lời chúc bên trong.</p>
 </div>
 </section>
@@ -266,7 +267,7 @@ body, button, input, textarea, select,
 (() => {
   const $ = id => document.getElementById(id);
   const recipientInput = $('recipientInput'), senderInput = $('senderInput'), messageInput = $('messageInput');
-  let isOpen = false, photoUrl = '', musicUrl = '', toastTimer, surpriseStarted = false, youtubePaused = false;
+  let isOpen = false, photoUrl = '', musicUrl = '', toastTimer, surpriseStarted = false, youtubePaused = false, sharedLocalMusic = false;
   const songCatalog = {
     'hon-ca-yeu': {videoId:'__kGJZ-kPno', title:'Hơn Cả Yêu — Đức Phúc', query:'Hơn Cả Yêu Đức Phúc Official MV', description:'Giai điệu ngọt ngào dành cho một lời yêu thương chân thành.'},
     'ngay-dau-tien': {videoId:'rIXhXaQ8tiM', title:'Ngày Đầu Tiên — Đức Phúc', query:'Ngày Đầu Tiên Đức Phúc Official Music Video', description:'Lãng mạn, ấm áp; phù hợp với lời hứa và kỷ niệm đẹp.'},
@@ -279,18 +280,32 @@ body, button, input, textarea, select,
     'yeu-em-rat-nhieu': {videoId:'OK7cYGAwJ8c', title:'Yêu Em Rất Nhiều — Hoàng Tôn', query:'Yêu Em Rất Nhiều Hoàng Tôn Official MV', description:'Ngọt ngào, phù hợp với thiệp tình yêu và lời tỏ bày.'},
     'cam-on-tinh-yeu': {videoId:'UCX_RhPygOM', title:'Cảm Ơn Tình Yêu — Uyên Linh', query:'Cảm Ơn Tình Yêu Uyên Linh Official', description:'Gợi cảm giác biết ơn, trân trọng và yêu thương.'}
   };
-  // Build the visual 10-song selection list from the same catalog used in shared links.
+  // Build the visual song list. A local audio file takes exclusive control of playback,
+  // so suggested songs are disabled and any previous suggested selection is cleared.
   function renderSongList(){
     const list=$('songList'); if(!list)return;
+    const localActive=!!musicUrl;
     list.innerHTML='';
     Object.entries(songCatalog).forEach(([key,song],index)=>{
+      const selected=!localActive && key===$('songSelect').value;
       const button=document.createElement('button');
-      button.type='button'; button.className='song-option'+(key===$('songSelect').value?' selected':'');
-      button.setAttribute('aria-pressed',key===$('songSelect').value?'true':'false');
-      button.innerHTML=`<span class="song-number">${String(index+1).padStart(2,'0')}</span><span class="song-info"><span class="song-title"></span><span class="song-description"></span><span class="song-check">${key===$('songSelect').value?'✓ Đang chọn':'♡ Chọn bài này'}</span></span>`;
+      button.type='button'; button.className='song-option'+(selected?' selected':'');
+      button.disabled=localActive;
+      button.setAttribute('aria-disabled',localActive?'true':'false');
+      button.setAttribute('aria-pressed',selected?'true':'false');
+      const checkText=localActive?'Tắt khi dùng nhạc riêng':(selected?'✓ Đang chọn':'♡ Chọn bài này');
+      button.innerHTML=`<span class="song-number">${String(index+1).padStart(2,'0')}</span><span class="song-info"><span class="song-title"></span><span class="song-description"></span><span class="song-check"></span></span>`;
       button.querySelector('.song-title').textContent=song.title;
       button.querySelector('.song-description').textContent=song.description;
-      button.addEventListener('click',()=>{$('songSelect').value=key;updateSongDescription();renderSongList();toast('Đã chọn: '+song.title);if(surpriseStarted&&!musicUrl)startSelectedMusic();});
+      button.querySelector('.song-check').textContent=checkText;
+      button.addEventListener('click',()=>{
+        if(musicUrl){toast('Bạn đang dùng nhạc từ máy. Hãy bấm “Bỏ nhạc riêng” trước khi chọn nhạc gợi ý.');return;}
+        $('songSelect').value=key;
+        sharedLocalMusic=false;
+        updateSongDescription();renderSongList();
+        toast('Đã chọn: '+song.title);
+        if(surpriseStarted)startSelectedMusic();
+      });
       list.appendChild(button);
     });
   }
@@ -302,7 +317,7 @@ body, button, input, textarea, select,
     }
   }
   const toast = text => { const el=$('toast'); el.textContent=text; el.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(()=>el.classList.remove('show'),2600); };
-  const state = () => ({to:recipientInput.value.trim() || 'Người thương', from:senderInput.value.trim() || 'Một người thương', message:messageInput.value.trim() || 'Chúc bạn một ngày 20/10 thật hạnh phúc!', song:$('songSelect').value || 'hon-ca-yeu'});
+  const state = () => ({to:recipientInput.value.trim() || 'Người thương', from:senderInput.value.trim() || 'Một người thương', message:messageInput.value.trim() || 'Chúc bạn một ngày 20/10 thật hạnh phúc!', song:musicUrl ? '' : ($('songSelect').value || ''), musicMode:(musicUrl || sharedLocalMusic) ? 'local' : 'suggested'});
   // Keep BOTH the envelope preview and the animated recipient letter synced with the editor.
   // Previously only the legacy envelope preview was updated while typing, so the story letter
   // could keep showing the old/default text until it was re-opened.
@@ -322,7 +337,7 @@ body, button, input, textarea, select,
   function startSelectedMusic(){
     const audio=$('audio');
     const song=songCatalog[$('songSelect').value];
-    if(audio.src){
+    if(musicUrl && audio.getAttribute('src')){
       audio.loop=true;
       const play=audio.play();
       if(play&&typeof play.catch==='function')play.catch(()=>toast('Trình duyệt chưa cho phép phát tệp nhạc; hãy nhấn nút phát nhạc.'));
@@ -331,7 +346,12 @@ body, button, input, textarea, select,
       $('musicBtn').textContent='Ⅱ Tạm dừng nhạc';
       return;
     }
-    if(!song||!song.videoId){$('musicStatus').textContent='♫ Hãy chọn một bài nhạc gợi ý';return;}
+    if(sharedLocalMusic && !musicUrl){
+      $('musicStatus').textContent='♫ Tệp nhạc riêng của người gửi không đi kèm link chia sẻ';
+      $('musicBtn').textContent='♫ Nhạc riêng không có trong link';
+      return;
+    }
+    if(!song||!song.videoId){$('musicStatus').textContent='♫ Hãy chọn một bài nhạc gợi ý hoặc tải nhạc riêng';return;}
     const player=$('musicEmbed');
     player.innerHTML='';
     const iframe=document.createElement('iframe');
@@ -378,7 +398,7 @@ body, button, input, textarea, select,
   }
   function flowerBurst(n=8){const scene=$('scene'),items=['🌸','🌷','✿','♡','✨'];for(let i=0;i<n;i++){const p=document.createElement('span');p.className='particle';p.textContent=items[Math.floor(Math.random()*items.length)];p.style.left=(Math.random()*96)+'%';p.style.fontSize=(12+Math.random()*18)+'px';p.style.animationDuration=(3+Math.random()*4)+'s';p.style.animationDelay=(Math.random()*.8)+'s';scene.appendChild(p);setTimeout(()=>p.remove(),8500);}}
   function packState(){return btoa(unescape(encodeURIComponent(JSON.stringify(state()))));}
-  function unpackState(){try{const hash=location.hash.match(/(?:^#|&)card=([^&]+)/);if(!hash)return;const data=JSON.parse(decodeURIComponent(escape(atob(hash[1]))));recipientInput.value=String(data.to||'').slice(0,70);senderInput.value=String(data.from||'').slice(0,70);messageInput.value=String(data.message||'');if(data.song && songCatalog[data.song])$('songSelect').value=data.song;updateSongDescription();updateCard(true);}catch(e){console.warn('Không đọc được dữ liệu thiệp từ link.',e);}}
+  function unpackState(){try{const hash=location.hash.match(/(?:^#|&)card=([^&]+)/);if(!hash)return;const data=JSON.parse(decodeURIComponent(escape(atob(hash[1]))));recipientInput.value=String(data.to||'').slice(0,70);senderInput.value=String(data.from||'').slice(0,70);messageInput.value=String(data.message||'');if(data.musicMode==='local'&&!data.song){sharedLocalMusic=true;$('songSelect').value='';}else if(data.song && songCatalog[data.song]){$('songSelect').value=data.song;sharedLocalMusic=false;}updateSongDescription();updateCard(true);}catch(e){console.warn('Không đọc được dữ liệu thiệp từ link.',e);}}
   function isLocalPreview(){return location.protocol==='file:' || ['localhost','127.0.0.1','::1'].includes(location.hostname);}
   function getPublicBaseUrl(){
     let raw='';
@@ -412,18 +432,59 @@ body, button, input, textarea, select,
     const a=document.createElement('a');a.href=dataUrl;a.download='thiep-20-10-qr.png';document.body.appendChild(a);a.click();a.remove();toast('Đã tải ảnh QR PNG. Bạn có thể gửi ảnh này qua Zalo hoặc Messenger.');
   }
   if(isLocalPreview()){$('publicUrlField').hidden=false;} 
-  function updateSongDescription(){const song=songCatalog[$('songSelect').value];$('songDescription').textContent=song?song.description:'';}
-  $('songSelect').addEventListener('change',()=>{updateSongDescription();renderSongList();toast('Đã chọn: '+songCatalog[$('songSelect').value].title);});
-  $('listenSongBtn').addEventListener('click',()=>{const song=songCatalog[$('songSelect').value];if(!song)return;const url=song.videoId?'https://www.youtube.com/watch?v='+song.videoId:'https://www.youtube.com/results?search_query='+encodeURIComponent(song.query);window.open(url,'_blank','noopener,noreferrer');toast('Đang mở bài: '+song.title);});
+  function updateSongDescription(){
+    const song=songCatalog[$('songSelect').value];
+    if(musicUrl){$('songDescription').textContent='Đang ưu tiên nhạc riêng từ máy. Tất cả bài gợi ý và nút nghe YouTube đã bị tắt.';}
+    else if(sharedLocalMusic){$('songDescription').textContent='Người gửi đã chọn nhạc riêng, nhưng tệp đó không được gửi kèm đường link. Hãy chọn nhạc gợi ý nếu muốn người nhận nghe nhạc qua link.';}
+    else {$('songDescription').textContent=song?song.description:'Chưa chọn bài nhạc. Hãy chọn một bài gợi ý hoặc tải nhạc riêng từ máy.';}
+    $('listenSongBtn').disabled=!!musicUrl || sharedLocalMusic || !song;
+    $('clearMusicBtn').hidden=!musicUrl;
+    $('customMusicStatus').textContent=musicUrl
+      ? 'Đang dùng tệp: '+( $('musicInput').files[0]?.name || 'nhạc riêng')+'. Nhạc gợi ý đã tắt và không thể chọn cho đến khi bỏ tệp này.'
+      : 'Nếu chọn tệp nhạc riêng, danh sách nhạc gợi ý sẽ tự tắt để không phát chồng. Tệp riêng chỉ có trên thiết bị này.';
+  }
+  $('songSelect').addEventListener('change',()=>{
+    if(musicUrl){$('songSelect').value='';updateSongDescription();renderSongList();toast('Nhạc gợi ý đang bị khóa vì bạn đã chọn nhạc từ máy.');return;}
+    sharedLocalMusic=false;updateSongDescription();renderSongList();
+    const song=songCatalog[$('songSelect').value];if(song)toast('Đã chọn: '+song.title);
+  });
+  $('listenSongBtn').addEventListener('click',()=>{
+    if(musicUrl||sharedLocalMusic){toast('Không thể mở nhạc gợi ý khi đang ở chế độ nhạc riêng.');return;}
+    const song=songCatalog[$('songSelect').value];if(!song)return;
+    const url=song.videoId?'https://www.youtube.com/watch?v='+song.videoId:'https://www.youtube.com/results?search_query='+encodeURIComponent(song.query);window.open(url,'_blank','noopener,noreferrer');toast('Đang mở bài: '+song.title);
+  });
   $('introImageButton').addEventListener('click',startSurprise);
-  const openSelectedSong = () => {const song=songCatalog[$('songSelect').value];if(song&&song.videoId)window.open('https://www.youtube.com/watch?v='+song.videoId,'_blank','noopener,noreferrer');};
+  const openSelectedSong = () => {if(musicUrl||sharedLocalMusic)return;const song=songCatalog[$('songSelect').value];if(song&&song.videoId)window.open('https://www.youtube.com/watch?v='+song.videoId,'_blank','noopener,noreferrer');};
   $('musicStatus').addEventListener('click',openSelectedSong);
   $('musicStatus').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openSelectedSong();}});
   $('updateBtn').addEventListener('click',()=>updateCard());
   [recipientInput,senderInput,messageInput].forEach(el=>el.addEventListener('input',()=>updateCard(true)));
   $('openBtn').addEventListener('click',()=>toggleEnvelope());$('envelopeButton').addEventListener('click',()=>toggleEnvelope());
   $('photoInput').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;if(!file.type.startsWith('image/')){toast('Vui lòng chọn tệp ảnh.');return;}if(photoUrl)URL.revokeObjectURL(photoUrl);photoUrl=URL.createObjectURL(file);$('coverImage').src=photoUrl;const scene=$('scene');let img=$('customPhoto');if(!img){img=document.createElement('img');img.id='customPhoto';img.alt='Ảnh trang trí do bạn chọn';img.style.cssText='position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.12;z-index:0;pointer-events:none';scene.prepend(img);}img.src=photoUrl;toast('Đã thay ảnh mở đầu cho bản xem trước.');});
-  $('musicInput').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;if(!file.type.startsWith('audio/')){toast('Vui lòng chọn tệp âm thanh.');return;}if(musicUrl)URL.revokeObjectURL(musicUrl);musicUrl=URL.createObjectURL(file);$('audio').src=musicUrl;$('audio').load();$('musicEmbed').innerHTML='';toast('Đã chọn nhạc riêng; nhạc này sẽ phát khi mở ảnh bất ngờ.');});
+  $('musicInput').addEventListener('change',e=>{
+    const file=e.target.files&&e.target.files[0];if(!file)return;
+    if(!file.type.startsWith('audio/')){toast('Vui lòng chọn tệp âm thanh.');e.target.value='';return;}
+    if(musicUrl)URL.revokeObjectURL(musicUrl);
+    const audio=$('audio');audio.pause();audio.currentTime=0;
+    musicUrl=URL.createObjectURL(file);audio.src=musicUrl;audio.load();
+    // Turn off the previously selected suggestion immediately, including in shared data.
+    $('songSelect').value='';sharedLocalMusic=false;
+    $('musicEmbed').innerHTML='';youtubePaused=false;
+    $('musicBtn').textContent='♫ Phát / tạm dừng nhạc';
+    updateSongDescription();renderSongList();
+    if(surpriseStarted)startSelectedMusic();
+    toast('Đã chọn nhạc từ máy. Nhạc gợi ý đã tự tắt và bị khóa để không phát chồng.');
+  });
+  $('clearMusicBtn').addEventListener('click',()=>{
+    const audio=$('audio');audio.pause();audio.currentTime=0;audio.removeAttribute('src');audio.load();
+    if(musicUrl)URL.revokeObjectURL(musicUrl);musicUrl='';
+    $('musicInput').value='';sharedLocalMusic=false;$('songSelect').value='';
+    $('musicEmbed').innerHTML='';youtubePaused=false;
+    $('musicBtn').textContent='♫ Phát / tạm dừng nhạc';
+    $('musicStatus').textContent='♫ Hãy chọn bài nhạc gợi ý hoặc tải nhạc riêng';
+    updateSongDescription();renderSongList();
+    toast('Đã bỏ nhạc riêng. Bạn có thể chọn lại một bài nhạc gợi ý.');
+  });
   $('musicBtn').addEventListener('click',async()=>{const a=$('audio');if(a.src){if(a.paused){try{await a.play();$('musicBtn').textContent='Ⅱ Tạm dừng nhạc';}catch(e){toast('Trình duyệt chưa cho phép phát nhạc. Hãy thử lại.');}}else{a.pause();$('musicBtn').textContent='♫ Phát nhạc';}return;}const iframe=$('musicEmbed').querySelector('iframe');if(!iframe){startSelectedMusic();return;}youtubePaused=!youtubePaused;sendYoutubeCommand(youtubePaused?'pauseVideo':'playVideo');$('musicBtn').textContent=youtubePaused?'♫ Phát nhạc':'Ⅱ Tạm dừng nhạc';});
   $('shareBtn').addEventListener('click',()=>{updateCard(true);const url=showShare();if(url)toast('Đã tạo link thiệp công khai để chia sẻ.');else toast('Cần đăng tải website và nhập URL công khai trước khi chia sẻ.');});
   $('qrBtn').addEventListener('click',()=>{updateCard(true);const url=showShare();if(!url){toast('Không thể tạo QR dùng được từ đường dẫn file:///. Hãy nhập URL website đã đăng tải.');return;}if(!window.QRCode){toast('Chưa tải được thư viện QR. Kiểm tra kết nối Internet rồi thử lại.');return;}toast('Đã tạo mã QR cho thiệp. Bấm “Tải ảnh QR xuống” để gửi qua Zalo hoặc Messenger.');});
@@ -431,7 +492,7 @@ body, button, input, textarea, select,
   $('publicBaseUrl').addEventListener('change',()=>{if($('shareBox').classList.contains('show')){const url=showShare();if(url)toast('Đã cập nhật link và mã QR từ website công khai.');}});
   $('copyBtn').addEventListener('click',async()=>{const url=$('shareUrl').dataset.url||'';if(!url){toast('Chưa có link công khai để sao chép.');return;}try{await navigator.clipboard.writeText(url);toast('Đã sao chép link!');}catch(e){const range=document.createRange();range.selectNodeContents($('shareUrl'));const sel=window.getSelection();sel.removeAllRanges();sel.addRange(range);toast('Hãy sao chép đường link đang được chọn.');}});
   $('nativeShareBtn').addEventListener('click',async()=>{const url=$('shareUrl').dataset.url||'';if(!url){toast('Chưa có link công khai để chia sẻ.');return;}if(navigator.share){try{await navigator.share({title:'Thiệp hoa điện tử 20/10',text:'Mình gửi bạn một tấm thiệp nhỏ 💐',url});}catch(e){if(e.name!=='AbortError')toast('Không thể mở bảng chia sẻ trên thiết bị này.');}}else{try{await navigator.clipboard.writeText(url);toast('Thiết bị chưa hỗ trợ chia sẻ nhanh; link đã được sao chép.');}catch(e){toast('Bạn hãy sao chép link ở phía trên.');}}});
-  $('musicStatus').textContent='♫ Nhạc nền sẽ bắt đầu khi bạn chạm vào ảnh';
+  $('musicStatus').textContent=sharedLocalMusic?'♫ Tệp nhạc riêng của người gửi không đi kèm link':'♫ Nhạc nền sẽ bắt đầu khi bạn chạm vào ảnh';
   $('letter').setAttribute('aria-hidden','true');
   // Occasional falling petals, with a restrained pace for a refined look.
   setInterval(()=>{if(document.visibilityState==='visible'&&Math.random()>.38)flowerBurst(1);},2400);
