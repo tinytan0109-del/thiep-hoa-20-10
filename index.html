@@ -397,8 +397,47 @@ body, button, input, textarea, select,
     if(iframe&&iframe.contentWindow){iframe.contentWindow.postMessage(JSON.stringify({event:'command',func:command,args:[]}), '*');}
   }
   function flowerBurst(n=8){const scene=$('scene'),items=['🌸','🌷','✿','♡','✨'];for(let i=0;i<n;i++){const p=document.createElement('span');p.className='particle';p.textContent=items[Math.floor(Math.random()*items.length)];p.style.left=(Math.random()*96)+'%';p.style.fontSize=(12+Math.random()*18)+'px';p.style.animationDuration=(3+Math.random()*4)+'s';p.style.animationDelay=(Math.random()*.8)+'s';scene.appendChild(p);setTimeout(()=>p.remove(),8500);}}
-  function packState(){return btoa(unescape(encodeURIComponent(JSON.stringify(state()))));}
-  function unpackState(){try{const hash=location.hash.match(/(?:^#|&)card=([^&]+)/);if(!hash)return;const data=JSON.parse(decodeURIComponent(escape(atob(hash[1]))));recipientInput.value=String(data.to||'').slice(0,70);senderInput.value=String(data.from||'').slice(0,70);messageInput.value=String(data.message||'');if(data.musicMode==='local'&&!data.song){sharedLocalMusic=true;$('songSelect').value='';}else if(data.song && songCatalog[data.song]){$('songSelect').value=data.song;sharedLocalMusic=false;}updateSongDescription();updateCard(true);}catch(e){console.warn('Không đọc được dữ liệu thiệp từ link.',e);}}
+  // Use URL-safe Base64 so +, / and = cannot be mangled by URL fragments,
+  // chat apps, QR scanners, or URL encoding/decoding between devices.
+  function packState(){
+    const json=JSON.stringify(state());
+    return btoa(unescape(encodeURIComponent(json))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+  }
+  function decodeCardPayload(raw){
+    // Accept new URL-safe links and older links that used percent-escaped standard Base64.
+    const candidates=[];
+    try{candidates.push(decodeURIComponent(raw));}catch(e){}
+    candidates.push(raw);
+    let lastError=null;
+    for(const candidate of candidates){
+      try{
+        let base64=candidate.replace(/-/g,'+').replace(/_/g,'/');
+        if(!/^[A-Za-z0-9+/]*={0,2}$/.test(base64)) continue;
+        base64=base64.replace(/=+$/,'');
+        base64+='='.repeat((4-base64.length%4)%4);
+        const json=decodeURIComponent(escape(atob(base64)));
+        return JSON.parse(json);
+      }catch(e){lastError=e;}
+    }
+    throw lastError||new Error('Dữ liệu thiệp trong link không hợp lệ');
+  }
+  function unpackState(){
+    try{
+      const hash=location.hash.match(/(?:^#|&)card=([^&]+)/);
+      if(!hash)return;
+      const data=decodeCardPayload(hash[1]);
+      recipientInput.value=String(data.to||'').slice(0,70);
+      senderInput.value=String(data.from||'').slice(0,70);
+      messageInput.value=String(data.message||'');
+      if(data.musicMode==='local'&&!data.song){sharedLocalMusic=true;$('songSelect').value='';}
+      else if(data.song && songCatalog[data.song]){$('songSelect').value=data.song;sharedLocalMusic=false;}
+      else {$('songSelect').value='';sharedLocalMusic=false;}
+      updateSongDescription();updateCard(true);
+    }catch(e){
+      console.warn('Không đọc được dữ liệu thiệp từ link.',e);
+      if(location.hash.includes('card=')) toast('Link thiệp không đọc được. Hãy tạo lại link mới từ bản website đã cập nhật.');
+    }
+  }
   function isLocalPreview(){return location.protocol==='file:' || ['localhost','127.0.0.1','::1'].includes(location.hostname);}
   function getPublicBaseUrl(){
     let raw='';
@@ -413,7 +452,7 @@ body, button, input, textarea, select,
       return url;
     }catch(e){return null;}
   }
-  function makeShareUrl(){const base=getPublicBaseUrl();if(!base)return null;base.hash='card='+encodeURIComponent(packState());return base.href;}
+  function makeShareUrl(){const base=getPublicBaseUrl();if(!base)return null;base.hash='card='+packState();return base.href;}
   function showShare(){
     const url=makeShareUrl();$('shareBox').classList.add('show');$('qrcode').innerHTML='';$('qrDownloadActions').hidden=true;
     $('shareUrl').dataset.url=url||'';
